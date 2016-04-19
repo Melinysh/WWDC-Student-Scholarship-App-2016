@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="aet-rk-Nlo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="3aw-iT-6jf">
+            <objects>
+                <viewController id="aet-rk-Nlo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ki-gg-3Bk"/>
+                        <viewControllerLayoutGuide type="bottom" id="x8h-K2-q1U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AHF-TT-4dP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-Tp-EyR">
+                                <rect key="frame" x="12" y="549" width="46" height="46"/>
+                                <size key="titleShadowOffset" width="4" height="5"/>
+                                <state key="normal" image="ResetButton"/>
+                                <connections>
+                                    <action selector="reset:" destination="aet-rk-Nlo" eventType="touchUpInside" id="7SS-P1-PEe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zz1-2M-uqU">
+                                <rect key="frame" x="83" y="549" width="46" height="46"/>
+                                <size key="titleShadowOffset" width="4" height="5"/>
+                                <state key="normal" image="UndoButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="undo:" destination="aet-rk-Nlo" eventType="touchUpInside" id="CRD-6N-Iqw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="zz1-2M-uqU" firstAttribute="leading" secondItem="raZ-Tp-EyR" secondAttribute="trailing" constant="25" id="1F2-Om-m9q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="raZ-Tp-EyR" secondAttribute="leading" constant="8" id="WeY-Gx-WpD"/>
+                            <constraint firstItem="x8h-K2-q1U" firstAttribute="top" secondItem="raZ-Tp-EyR" secondAttribute="bottom" constant="5" id="duT-WN-u3l"/>
+                            <constraint firstItem="zz1-2M-uqU" firstAttribute="top" secondItem="raZ-Tp-EyR" secondAttribute="top" id="frw-II-d5E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resetButton" destination="raZ-Tp-EyR" id="cIX-tH-cph"/>
+                        <outlet property="undoButton" destination="zz1-2M-uqU" id="Ywi-Pk-SwI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXl-TI-T7y" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ResetButton" width="46" height="46"/>
+        <image name="UndoButton" width="46" height="46"/>
+    </resources>
+</document>

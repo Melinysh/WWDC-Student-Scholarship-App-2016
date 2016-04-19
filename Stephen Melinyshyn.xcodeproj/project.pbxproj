@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC38A10E1CC5B4B000DFD8CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38A10D1CC5B4B000DFD8CB /* DetailViewController.swift */; };
+		DC38A1101CC5B54900DFD8CB /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38A10F1CC5B54900DFD8CB /* CardData.swift */; };
+		DC5AA66C1CC67CAB000C9AB3 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA65F1CC67CAB000C9AB3 /* Ball.m */; };
+		DC5AA66D1CC67CAB000C9AB3 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6611CC67CAB000C9AB3 /* Bomb.m */; };
+		DC5AA66E1CC67CAB000C9AB3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6631CC67CAB000C9AB3 /* GameViewController.m */; };
+		DC5AA66F1CC67CAB000C9AB3 /* HowToPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6651CC67CAB000C9AB3 /* HowToPlayViewController.m */; };
+		DC5AA6701CC67CAB000C9AB3 /* ScoresTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6671CC67CAB000C9AB3 /* ScoresTableViewController.m */; };
+		DC5AA6711CC67CAB000C9AB3 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6691CC67CAB000C9AB3 /* ShareViewController.m */; };
+		DC5AA6721CC67CAB000C9AB3 /* TapzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */; };
+		DCA336061CC5A5A8003AFF96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */; };
+		DCA336081CC5A5A8003AFF96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336071CC5A5A8003AFF96 /* ViewController.swift */; };
+		DCA3360B1CC5A5A8003AFF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA336091CC5A5A8003AFF96 /* Main.storyboard */; };
+		DCA3360D1CC5A5A8003AFF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA3360C1CC5A5A8003AFF96 /* Assets.xcassets */; };
+		DCA336101CC5A5A8003AFF96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA3360E1CC5A5A8003AFF96 /* LaunchScreen.storyboard */; };
+		DCA336181CC5A63C003AFF96 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA336171CC5A63C003AFF96 /* Card.xib */; };
+		DCA3361A1CC5A712003AFF96 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336191CC5A712003AFF96 /* CardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC38A10D1CC5B4B000DFD8CB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DC38A10F1CC5B54900DFD8CB /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		DC5AA65D1CC67CAA000C9AB3 /* Stephen Melinyshyn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stephen Melinyshyn-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC5AA65E1CC67CAB000C9AB3 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		DC5AA65F1CC67CAB000C9AB3 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ball.m; sourceTree = "<group>"; };
+		DC5AA6601CC67CAB000C9AB3 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
+		DC5AA6611CC67CAB000C9AB3 /* Bomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb.m; sourceTree = "<group>"; };
+		DC5AA6621CC67CAB000C9AB3 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		DC5AA6631CC67CAB000C9AB3 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		DC5AA6641CC67CAB000C9AB3 /* HowToPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToPlayViewController.h; sourceTree = "<group>"; };
+		DC5AA6651CC67CAB000C9AB3 /* HowToPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToPlayViewController.m; sourceTree = "<group>"; };
+		DC5AA6661CC67CAB000C9AB3 /* ScoresTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresTableViewController.h; sourceTree = "<group>"; };
+		DC5AA6671CC67CAB000C9AB3 /* ScoresTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresTableViewController.m; sourceTree = "<group>"; };
+		DC5AA6681CC67CAB000C9AB3 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		DC5AA6691CC67CAB000C9AB3 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		DC5AA66A1CC67CAB000C9AB3 /* TapzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapzViewController.h; sourceTree = "<group>"; };
+		DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapzViewController.m; sourceTree = "<group>"; };
+		DCA336021CC5A5A8003AFF96 /* Stephen Melinyshyn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stephen Melinyshyn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCA336071CC5A5A8003AFF96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCA3360A1CC5A5A8003AFF96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCA3360C1CC5A5A8003AFF96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCA3360F1CC5A5A8003AFF96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCA336111CC5A5A8003AFF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCA336171CC5A63C003AFF96 /* Card.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
+		DCA336191CC5A712003AFF96 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCA335FF1CC5A5A8003AFF96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC5AA6731CC67CAF000C9AB3 /* Tapz */ = {
+			isa = PBXGroup;
+			children = (
+				DC5AA65E1CC67CAB000C9AB3 /* Ball.h */,
+				DC5AA65F1CC67CAB000C9AB3 /* Ball.m */,
+				DC5AA6601CC67CAB000C9AB3 /* Bomb.h */,
+				DC5AA6611CC67CAB000C9AB3 /* Bomb.m */,
+				DC5AA6621CC67CAB000C9AB3 /* GameViewController.h */,
+				DC5AA6631CC67CAB000C9AB3 /* GameViewController.m */,
+				DC5AA6641CC67CAB000C9AB3 /* HowToPlayViewController.h */,
+				DC5AA6651CC67CAB000C9AB3 /* HowToPlayViewController.m */,
+				DC5AA6661CC67CAB000C9AB3 /* ScoresTableViewController.h */,
+				DC5AA6671CC67CAB000C9AB3 /* ScoresTableViewController.m */,
+				DC5AA6681CC67CAB000C9AB3 /* ShareViewController.h */,
+				DC5AA6691CC67CAB000C9AB3 /* ShareViewController.m */,
+				DC5AA66A1CC67CAB000C9AB3 /* TapzViewController.h */,
+				DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */,
+			);
+			name = Tapz;
+			sourceTree = "<group>";
+		};
+		DCA335F91CC5A5A8003AFF96 = {
+			isa = PBXGroup;
+			children = (
+				DCA336041CC5A5A8003AFF96 /* Stephen Melinyshyn */,
+				DCA336031CC5A5A8003AFF96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCA336031CC5A5A8003AFF96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCA336021CC5A5A8003AFF96 /* Stephen Melinyshyn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCA336041CC5A5A8003AFF96 /* Stephen Melinyshyn */ = {
+			isa = PBXGroup;
+			children = (
+				DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */,
+				DCA336071CC5A5A8003AFF96 /* ViewController.swift */,
+				DC38A10D1CC5B4B000DFD8CB /* DetailViewController.swift */,
+				DCA336091CC5A5A8003AFF96 /* Main.storyboard */,
+				DCA336171CC5A63C003AFF96 /* Card.xib */,
+				DC38A10F1CC5B54900DFD8CB /* CardData.swift */,
+				DC5AA6731CC67CAF000C9AB3 /* Tapz */,
+				DCA336191CC5A712003AFF96 /* CardView.swift */,
+				DCA3360C1CC5A5A8003AFF96 /* Assets.xcassets */,
+				DCA3360E1CC5A5A8003AFF96 /* LaunchScreen.storyboard */,
+				DCA336111CC5A5A8003AFF96 /* Info.plist */,
+				DC5AA65D1CC67CAA000C9AB3 /* Stephen Melinyshyn-Bridging-Header.h */,
+			);
+			path = "Stephen Melinyshyn";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCA336011CC5A5A8003AFF96 /* Stephen Melinyshyn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCA336141CC5A5A8003AFF96 /* Build configuration list for PBXNativeTarget "Stephen Melinyshyn" */;
+			buildPhases = (
+				DCA335FE1CC5A5A8003AFF96 /* Sources */,
+				DCA335FF1CC5A5A8003AFF96 /* Frameworks */,
+				DCA336001CC5A5A8003AFF96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stephen Melinyshyn";
+			productName = "Stephen Melinyshyn";
+			productReference = DCA336021CC5A5A8003AFF96 /* Stephen Melinyshyn.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCA335FA1CC5A5A8003AFF96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Stephen Melinyshyn";
+				TargetAttributes = {
+					DCA336011CC5A5A8003AFF96 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = DCA335FD1CC5A5A8003AFF96 /* Build configuration list for PBXProject "Stephen Melinyshyn" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCA335F91CC5A5A8003AFF96;
+			productRefGroup = DCA336031CC5A5A8003AFF96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCA336011CC5A5A8003AFF96 /* Stephen Melinyshyn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCA336001CC5A5A8003AFF96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA336101CC5A5A8003AFF96 /* LaunchScreen.storyboard in Resources */,
+				DCA3360D1CC5A5A8003AFF96 /* Assets.xcassets in Resources */,
+				DCA3360B1CC5A5A8003AFF96 /* Main.storyboard in Resources */,
+				DCA336181CC5A63C003AFF96 /* Card.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCA335FE1CC5A5A8003AFF96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC5AA66E1CC67CAB000C9AB3 /* GameViewController.m in Sources */,
+				DC5AA66D1CC67CAB000C9AB3 /* Bomb.m in Sources */,
+				DC5AA6711CC67CAB000C9AB3 /* ShareViewController.m in Sources */,
+				DC38A1101CC5B54900DFD8CB /* CardData.swift in Sources */,
+				DC5AA66F1CC67CAB000C9AB3 /* HowToPlayViewController.m in Sources */,
+				DC5AA6701CC67CAB000C9AB3 /* ScoresTableViewController.m in Sources */,
+				DCA336081CC5A5A8003AFF96 /* ViewController.swift in Sources */,
+				DC5AA66C1CC67CAB000C9AB3 /* Ball.m in Sources */,
+				DCA3361A1CC5A712003AFF96 /* CardView.swift in Sources */,
+				DC5AA6721CC67CAB000C9AB3 /* TapzViewController.m in Sources */,
+				DCA336061CC5A5A8003AFF96 /* AppDelegate.swift in Sources */,
+				DC38A10E1CC5B4B000DFD8CB /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DCA336091CC5A5A8003AFF96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCA3360A1CC5A5A8003AFF96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCA3360E1CC5A5A8003AFF96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCA3360F1CC5A5A8003AFF96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCA336121CC5A5A8003AFF96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCA336131CC5A5A8003AFF96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCA336151CC5A5A8003AFF96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Stephen Melinyshyn/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "StephenMelinyshyn.Stephen-Melinyshyn";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stephen Melinyshyn/Stephen Melinyshyn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCA336161CC5A5A8003AFF96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Stephen Melinyshyn/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "StephenMelinyshyn.Stephen-Melinyshyn";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stephen Melinyshyn/Stephen Melinyshyn-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCA335FD1CC5A5A8003AFF96 /* Build configuration list for PBXProject "Stephen Melinyshyn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA336121CC5A5A8003AFF96 /* Debug */,
+				DCA336131CC5A5A8003AFF96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCA336141CC5A5A8003AFF96 /* Build configuration list for PBXNativeTarget "Stephen Melinyshyn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA336151CC5A5A8003AFF96 /* Debug */,
+				DCA336161CC5A5A8003AFF96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCA335FA1CC5A5A8003AFF96 /* Project object */;
+}
