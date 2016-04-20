@@ -21,7 +21,9 @@ class CardView: UIView {
 
 		info = i
 		self.titleLabel.text = info.eventName
+		self.titleLabel.alpha = 1
 		self.thumbnail.image = UIImage(named: info.imageName)
+		self.thumbnail.alpha = 1
 		self.backgroundColor = info.backgroundColor
 		self.titleLabel.textColor = info.textColor
 		thumbnail.layer.cornerRadius = self.cornerRad
@@ -39,7 +41,6 @@ class CardView: UIView {
 		
 		// prepare for drop animation
 		self.alpha = 0
-		self.transform = CGAffineTransformMakeScale(1.35, 1.35)
 
 	}
     /*
@@ -49,6 +50,8 @@ class CardView: UIView {
         // Drawing code
     }
     */
+	
+	
 
 	override func layoutSubviews() {
 		super.layoutSubviews()

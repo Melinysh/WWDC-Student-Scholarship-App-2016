@@ -18,15 +18,30 @@ class ViewController: UIViewController {
 	var attachmentBehavior : UIAttachmentBehavior?
 	var snapBehavior : UISnapBehavior!
 	
+	let progressIndicator = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
+	
+	
+	var verticleOffset : CGFloat!
+	var horizontalOffset : CGFloat!
+	
 	@IBOutlet weak var resetButton: UIButton!
 	@IBOutlet weak var undoButton: UIButton!
 	
+	
 	@IBAction func undo(sender: AnyObject) {
-		guard let currentTopCard = self.view.subviews.last as? CardView else { return }
+		guard let currentTopCard = self.view.subviews.last as? CardView else {
+			generateCardViews()
+			dropCard(cardViews.first!)
+			return
+		}
+		progressIndicator.setProgress(progressIndicator.progress - (Float(1.0) / Float(self.cardViews.count)), animated: true)
 		for i in 0..<cardViews.count {
 			if cardViews[i] == currentTopCard && i < cardViews.count - 1 {
-				dropCard(cardViews[i+1])
+				let c = cardViews[i+1]
+				c.setup(c.info)
+				dropCard(c)
 				
+				self.progressIndicator.tintColor = c.backgroundColor
 				// if undo puts back top card, remove undo button
 				if i+1 == cardViews.count - 1 {
 					UIView.animateWithDuration(0.40, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
@@ -39,6 +54,7 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func reset(sender: AnyObject) {
+		progressIndicator.setProgress(0.0, animated: true)
 		generateCardViews()
 		dropCards()
 	}
@@ -72,8 +88,14 @@ class ViewController: UIViewController {
 				UIView.animateKeyframesWithDuration(0.1, delay: 0.3, options: UIViewKeyframeAnimationOptions(), animations: { () -> Void in
 					card.alpha = 0
 					}, completion: { (fin) -> Void in
+						// reset attributes
+						card.setup(card.info)
+						
 						card.removeFromSuperview()
 						self.animator.removeAllBehaviors()
+						
+						let newProgress = Float(1.0) / Float(self.cardViews.count) + self.progressIndicator.progress
+						self.progressIndicator.setProgress(newProgress, animated: true)
 						
 						self.viewsAndRotations[card] = 0
 
@@ -84,12 +106,12 @@ class ViewController: UIViewController {
 							})
 							self.snapBehavior = UISnapBehavior(item: newTopCard, snapToPoint: self.view.center)
 							self.animator.addBehavior(self.snapBehavior)
-							//self.view.backgroundColor = newTopCard.backgroundColor
+							self.view.backgroundColor = newTopCard.backgroundColor
+							self.progressIndicator.tintColor = newTopCard.backgroundColor
 						} else {
 							let alert = UIAlertController(title: "You're all done!", message: "Go back to the start?", preferredStyle: UIAlertControllerStyle.Alert)
 							let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Cancel, handler: { (a) -> Void in
-								self.generateCardViews()
-								self.dropCards()
+								self.reset(self)
 							})
 							let no = UIAlertAction(title: "No, thanks", style: .Default, handler: nil)
 							alert.addAction(yes)
@@ -106,12 +128,23 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		animator = UIDynamicAnimator(referenceView: view)
+		progressIndicator.translatesAutoresizingMaskIntoConstraints = false
+		progressIndicator.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: progressIndicator.bounds.height + 20)
+		view.insertSubview(progressIndicator, atIndex: 1)
+		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[indicator]|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["indicator" : progressIndicator]))
+	
 		
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		verticleOffset = self.view.frame.height/7
+		horizontalOffset = self.view.frame.width/11
 		generateCardViews()
 		dropCards()
+		
 	}
+	
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -124,6 +157,7 @@ class ViewController: UIViewController {
 		cardViews.removeAll()
 		CardData().allCardInfo().forEach { (info) in
 			let card = UINib(nibName: "Card", bundle: nil).instantiateWithOwner(CardView(), options: nil).first! as! CardView
+			
 			card.setup(info)
 			
 			// generate angle 
@@ -136,6 +170,9 @@ class ViewController: UIViewController {
 			angle *= (Float(M_PI) / Float(180))
 			viewsAndRotations[card] = CGFloat(angle)
 			
+			
+			card.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCard)))
+			
 			cardViews.append(card)
 		}
 	}
@@ -144,6 +181,7 @@ class ViewController: UIViewController {
 		cardViews = Array(cardViews[0..<cardNumber])
 		dropCards()
 	}
+	
 
 	
 	func dropCards() {
@@ -151,47 +189,88 @@ class ViewController: UIViewController {
 			let card = cardViews[i]
 			if i == cardViews.count - 1 {
 				self.viewsAndRotations[card] = CGFloat(0)
-				//	self.view.backgroundColor = card.backgroundColor
+				self.view.backgroundColor = card.backgroundColor
 			}
+			
+			// prepare to animate
+			//card.transform = CGAffineTransformMakeScale(1.35, 1.35)
 			self.view.addSubview(card)
 			
 			// apply constraints
-			let verticle = NSLayoutConstraint.constraintsWithVisualFormat("V:|-offset-[card]-offset-|", options: NSLayoutFormatOptions(), metrics: ["offset": self.view.frame.height/8], views: ["card" : card])
-			let horizontal = NSLayoutConstraint(item: card, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 1)
-			let ratio = NSLayoutConstraint(item: card, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: card, attribute: NSLayoutAttribute.Height, multiplier: 0.6, constant: 1)
-			//let left = NSLayoutConstraint(item: card, attribute: .Leading, relatedBy: .GreaterThanOrEqual, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 1)
-			//	let right = NSLayoutConstraint(item: card, attribute: .Trailing, relatedBy: .GreaterThanOrEqual, toItem: self.view, attribute: .TrailingMargin, multiplier: 1, constant: 1)
-			self.view.addConstraints(verticle)
-			self.view.addConstraints([ratio, horizontal/*, left, right*/])
-			
+			applyConstraintsToCard(card)
 			
 			UIView.animateWithDuration(0.30, delay: 0.3 * Double(i), usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
 				card.alpha = 1
 				card.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(self.viewsAndRotations[card]!), CGAffineTransformMakeScale(1, 1))
-				}, completion: nil)
+			}, completion: nil)
 		}
 		UIView.animateWithDuration(0.40, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
 			self.undoButton.alpha = 0
-			}, completion: nil)
+		}, completion: nil)
 	}
 	
 	func dropCard(card :CardView) {
 		
+		// prepare to animate
+		card.transform = CGAffineTransformMakeScale(1.35, 1.35)
+
 		self.view.addSubview(card)
 		
-		// apply constraints
-		let verticle = NSLayoutConstraint.constraintsWithVisualFormat("V:|-offset-[card]-offset-|", options: NSLayoutFormatOptions(), metrics: ["offset": self.view.frame.height/8], views: ["card" : card])
-		let horizontal = NSLayoutConstraint(item: card, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 1)
-		let ratio = NSLayoutConstraint(item: card, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: card, attribute: NSLayoutAttribute.Height, multiplier: 0.6, constant: 1)
-		self.view.addConstraints(verticle)
-		self.view.addConstraint(ratio)
-		self.view.addConstraint(horizontal)
-		
+		applyConstraintsToCard(card)
+
 		
 		UIView.animateWithDuration(0.30, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
 			card.alpha = 1
 			card.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(self.viewsAndRotations[card]!), CGAffineTransformMakeScale(1, 1))
 			}, completion: nil)
+	}
+	
+	func applyConstraintsToCard(card : CardView) {
+		print("View height: \(view.frame.height) and /7 is \(view.frame.height/7) [verticle]")
+		print("View width: \(view.frame.width) and /11 is \(view.frame.height/11) [horiz]")
+		// apply constraints
+		let verticle = NSLayoutConstraint.constraintsWithVisualFormat("V:|-offset-[card]-offset-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: ["offset": verticleOffset], views: ["card" : card])
+		//let align = NSLayoutConstraint(item: card, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 1)
+		let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|-hOffset-[card]-hOffset-|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: ["hOffset" : horizontalOffset], views: ["card" : card])
+		//let left = NSLayoutConstraint(item: card, attribute: .Leading, relatedBy: .GreaterThanOrEqual, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 1)
+		//	let right = NSLayoutConstraint(item: card, attribute: .Trailing, relatedBy: .GreaterThanOrEqual, toItem: self.view, attribute: .TrailingMargin, multiplier: 1, constant: 1)
+		self.view.addConstraints(verticle + horizontal)
+		//self.view.addConstraint(align)
+	}
+	
+	
+	
+	override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		guard let topCard = self.view.subviews.last as? CardView else { return }
+		self.animator.removeAllBehaviors()
+		self.snapBehavior = UISnapBehavior(item: topCard, snapToPoint: self.view.center)
+		self.animator.addBehavior(self.snapBehavior)
+		cardViews.forEach{$0.needsUpdateConstraints()}
+
+	}
+
+	// Card Interactions
+	func didTapCard(tap : UITapGestureRecognizer) {
+		guard let card = self.view.subviews.last as? CardView else { return }
+		UIView.animateWithDuration(0.15, animations: {
+			card.thumbnail.alpha = 0
+			card.titleLabel.alpha = 0
+			card.layer.shadowOpacity = 0
+			}) { (finished) in
+				UIView.animateWithDuration(0.3, animations: {
+					card.frame = self.view.frame
+					card.layer.cornerRadius = 0
+				}) { (fin) in
+//					let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("testDetailVC") as! DetailViewController
+//					card.addSubview(detailVC.view)
+//					detailVC.thumbnail.image = card.thumbnail.image
+//					let verticle = NSLayoutConstraint.constraintsWithVisualFormat("V:|[detV]|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["detV" : detailVC.view])
+//					//let align = NSLayoutConstraint(item: card, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 1)
+//					let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[detV]|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: ["detV" : detailVC.view])
+//					card.addConstraints(verticle + horizontal)
+					}
+		}
 	}
 	
 	

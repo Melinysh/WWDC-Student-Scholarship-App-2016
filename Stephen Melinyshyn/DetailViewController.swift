@@ -11,10 +11,9 @@ import UIKit
 class DetailViewController: UIViewController {
 
 	@IBOutlet weak var thumbnail: UIImageView!
-	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var info: UITextView!
-	@IBOutlet weak var extraView1: UIView!
-	@IBOutlet weak var extraView2: UIView!
+
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
