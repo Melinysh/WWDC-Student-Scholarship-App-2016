@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC38A10E1CC5B4B000DFD8CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38A10D1CC5B4B000DFD8CB /* DetailViewController.swift */; };
 		DC38A1101CC5B54900DFD8CB /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38A10F1CC5B54900DFD8CB /* CardData.swift */; };
 		DC5AA66C1CC67CAB000C9AB3 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA65F1CC67CAB000C9AB3 /* Ball.m */; };
 		DC5AA66D1CC67CAB000C9AB3 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6611CC67CAB000C9AB3 /* Bomb.m */; };
@@ -16,6 +15,8 @@
 		DC5AA6701CC67CAB000C9AB3 /* ScoresTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6671CC67CAB000C9AB3 /* ScoresTableViewController.m */; };
 		DC5AA6711CC67CAB000C9AB3 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6691CC67CAB000C9AB3 /* ShareViewController.m */; };
 		DC5AA6721CC67CAB000C9AB3 /* TapzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */; };
+		DC90CC511CC95235009EE849 /* MeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90CC501CC95235009EE849 /* MeCardViewController.swift */; };
+		DC93241D1CCBDD1900637563 /* WelcomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */; };
 		DCA336061CC5A5A8003AFF96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */; };
 		DCA336081CC5A5A8003AFF96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336071CC5A5A8003AFF96 /* ViewController.swift */; };
 		DCA3360B1CC5A5A8003AFF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA336091CC5A5A8003AFF96 /* Main.storyboard */; };
@@ -23,10 +24,11 @@
 		DCA336101CC5A5A8003AFF96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA3360E1CC5A5A8003AFF96 /* LaunchScreen.storyboard */; };
 		DCA336181CC5A63C003AFF96 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA336171CC5A63C003AFF96 /* Card.xib */; };
 		DCA3361A1CC5A712003AFF96 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336191CC5A712003AFF96 /* CardView.swift */; };
+		DCCF727E1CC84D7A00C7D2E5 /* TapzCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */; };
+		DCCF72801CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF727F1CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC38A10D1CC5B4B000DFD8CB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DC38A10F1CC5B54900DFD8CB /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		DC5AA65D1CC67CAA000C9AB3 /* Stephen Melinyshyn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stephen Melinyshyn-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC5AA65E1CC67CAB000C9AB3 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		DC5AA6691CC67CAB000C9AB3 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		DC5AA66A1CC67CAB000C9AB3 /* TapzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapzViewController.h; sourceTree = "<group>"; };
 		DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapzViewController.m; sourceTree = "<group>"; };
+		DC90CC501CC95235009EE849 /* MeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCardViewController.swift; sourceTree = "<group>"; };
+		DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCardViewController.swift; sourceTree = "<group>"; };
 		DCA336021CC5A5A8003AFF96 /* Stephen Melinyshyn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stephen Melinyshyn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA336071CC5A5A8003AFF96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		DCA336111CC5A5A8003AFF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCA336171CC5A63C003AFF96 /* Card.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
 		DCA336191CC5A712003AFF96 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapzCardViewController.swift; sourceTree = "<group>"; };
+		DCCF727F1CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +113,10 @@
 			children = (
 				DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */,
 				DCA336071CC5A5A8003AFF96 /* ViewController.swift */,
-				DC38A10D1CC5B4B000DFD8CB /* DetailViewController.swift */,
+				DCCF727F1CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift */,
+				DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */,
+				DC90CC501CC95235009EE849 /* MeCardViewController.swift */,
+				DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */,
 				DCA336091CC5A5A8003AFF96 /* Main.storyboard */,
 				DCA336171CC5A63C003AFF96 /* Card.xib */,
 				DC38A10F1CC5B54900DFD8CB /* CardData.swift */,
@@ -200,11 +209,14 @@
 				DC5AA66F1CC67CAB000C9AB3 /* HowToPlayViewController.m in Sources */,
 				DC5AA6701CC67CAB000C9AB3 /* ScoresTableViewController.m in Sources */,
 				DCA336081CC5A5A8003AFF96 /* ViewController.swift in Sources */,
+				DC93241D1CCBDD1900637563 /* WelcomeCardViewController.swift in Sources */,
 				DC5AA66C1CC67CAB000C9AB3 /* Ball.m in Sources */,
+				DCCF72801CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift in Sources */,
 				DCA3361A1CC5A712003AFF96 /* CardView.swift in Sources */,
 				DC5AA6721CC67CAB000C9AB3 /* TapzViewController.m in Sources */,
 				DCA336061CC5A5A8003AFF96 /* AppDelegate.swift in Sources */,
-				DC38A10E1CC5B4B000DFD8CB /* DetailViewController.swift in Sources */,
+				DC90CC511CC95235009EE849 /* MeCardViewController.swift in Sources */,
+				DCCF727E1CC84D7A00C7D2E5 /* TapzCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

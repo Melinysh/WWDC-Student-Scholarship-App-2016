@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import MapKit
+import SafariServices
 
-class MeCardViewController: UIViewController {
+class MeCardViewController: UIViewController, DetailViewControllable {
+	@IBOutlet weak var infoField: UITextView!
+	@IBOutlet weak var websiteButton: UIButton!
+	@IBOutlet weak var mapView: MKMapView!
 
+	func buttonPressed() {
+		let sfVC = SFSafariViewController(URL: NSURL(string: "https://melinysh.me")!)
+		self.presentViewController(sfVC, animated: true, completion: nil)
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+	override func canBecomeFirstResponder() -> Bool {
+		return true
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	func additionalSetup(info: CardInfo)  {
+		self.becomeFirstResponder()
+		websiteButton.enabled = true
+		websiteButton.addTarget(self, action: #selector(buttonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+		let zoomLocation = CLLocationCoordinate2D(latitude: 44.2286091, longitude: -76.4837246)
+		let viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2000.344, 2000.344)
+		mapView.setRegion(viewRegion, animated: true)
+	}
 
     /*
     // MARK: - Navigation

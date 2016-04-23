@@ -12,6 +12,7 @@ class CardView: UIView {
 
 	@IBOutlet weak var thumbnail: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var stackView: UIStackView!
 	
 	let cornerRad : CGFloat = 26
 	var info : CardInfo!
@@ -42,8 +43,6 @@ class CardView: UIView {
 		// prepare for drop animation
 		self.alpha = 0
 		self.transform = CGAffineTransformMakeScale(1.35, 1.35)
-
-
 	}
     /*
     // Only override drawRect: if you perform custom drawing.
