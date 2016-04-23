@@ -1,19 +1,15 @@
 //
-//  DetailViewController.swift
+//  TapzCardViewController.swift
 //  Stephen Melinyshyn
 //
-//  Created by Stephen Melinyshyn on 2016-04-18.
+//  Created by Stephen Melinyshyn on 2016-04-20.
 //  Copyright © 2016 Stephen Melinyshyn. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class TapzCardViewController: DetailViewController {
 
-	@IBOutlet weak var thumbnail: UIImageView!
-	@IBOutlet weak var info: UITextView!
-
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +19,6 @@ class DetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-	
     }
     
 

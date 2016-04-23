@@ -42,6 +42,15 @@ bool hasPresented = false;
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotate
+{
+	return NO;
+}
+
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations{
+	return UIInterfaceOrientationMaskPortrait;
+}
+
 /*=-=-=-= END OF MANDATORY VIEW METHODS =-=-=-=-*/
 
 /*=-=-=-= START OF COLOR CHANGE METHODS =-=-=-=-*/

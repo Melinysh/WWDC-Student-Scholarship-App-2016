@@ -15,7 +15,7 @@ struct CardInfo {
 	var backgroundColor : UIColor!
 	var textColor : UIColor!
 	var id : Int!
-	var specialStoryboard : String?
+	var storyboard : String!
 	var extraInfo : [String : AnyObject]!
 	init(img: String, detail : String, name : String, bcC : UIColor, tC : UIColor, index : Int, storyboard : String?, extraInfoDict : [String : AnyObject]) {
 		imageName = img
@@ -24,7 +24,7 @@ struct CardInfo {
 		backgroundColor = bcC
 		textColor = tC
 		id = index
-		specialStoryboard = storyboard
+		self.storyboard = storyboard
 		extraInfo = extraInfoDict
 	}
 }
@@ -32,16 +32,16 @@ struct CardInfo {
 class CardData: NSObject {
 	
 	let storyboards : [String?] = [
-		nil, //welcome
-		nil, //me
-		nil, // tapz
-		nil, //rez
-		nil, // MarketMesh
-		nil, // meshwurk
-		nil, // NearbEYE
-		nil, // wellaware
-		nil, //this app
-		nil // wattpad
+		"welcome", //welcome
+		"me", //me
+		"tapz", // tapz
+		"rez", //rez
+		"marketmesh", // MarketMesh
+		"meshwurk", // meshwurk
+		"nearbeye", // NearbEYE
+		"wellaware", // wellaware
+		"wwdc", //this app
+		"wattpad" // wattpad
 	]
 	
 	
@@ -105,7 +105,7 @@ class CardData: NSObject {
 		
 		"I was born and raised in Kingston, Ontario. When I was 13, I attended an enriched studies day at Queen's University where I was first introduced to programming. I began with very small programs and scripts that helped automate tasks. I didn't take any programming classes before starting university this past fall, but I was able to teach myself strong foundational skills. As time has passed, I have moved to more complex software projects that you can read about in the next cards!",
 		
-		"My first iOS app I developed was called Tapz and I made it in 2013. The idea behind it was simple; a game where you tap to remove bouncing balls, but avoid the bombs. The faster you can remove the balls, the better. This app developed my skills in Core Animation, autolayout, integration with social services like Facebook and Twitter to share score and basic file I/O operations to keep track of highscores. Tapz was a hit amoung my friends and I and we frequently competed against eachother for the highest score. Looking back, Tapz is small enough to integrate directily into this app and you are free to play it below!",
+		"My first iOS app I developed was called Tapz and I made it in 2013. The idea behind it was simple; a game where you tap to remove bouncing balls, but avoid the bombs. The faster you can remove the balls, the better. This app developed my skills in Core Animation, Autolayout, integration with social services like Facebook and Twitter to share score and basic file I/O operations to keep track of highscores. Tapz was a hit amoung my friends and I and we frequently competed against eachother for the highest score. Looking back, Tapz is small enough to integrate directly into this app and you are free to play it below. Try to beat a highscore of 4 balls/second!",
 		
 		"In 2014, I was switching between a couple of different feed reader clients from the App Store and knew that I wasn't satisfied with any of them. It dawned on me that I could build something like this! I knew it would be quite the challenge, but I knew it could be very rewarding. After 5 months of work, Rez Reader launched in the App Store. Rez Reader was downloaded by users around the world, and, most importantly, I was proud of what I accomplished. Rez utlized numerous technologies, such as UIDynamics, Autolayout, Core Data, and social services integration to provide a superior uer experience. Eariler this year, I decided to sunset Rez to work on more exciting things that you can read about in the next few cards...",
 		

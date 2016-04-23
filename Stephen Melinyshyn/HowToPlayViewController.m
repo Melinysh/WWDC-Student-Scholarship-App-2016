@@ -50,6 +50,10 @@
 	return NO;
 }
 
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations{
+	return UIInterfaceOrientationMaskPortrait;
+}
+
 /*
 #pragma mark - Navigation
 

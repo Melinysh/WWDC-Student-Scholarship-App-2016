@@ -79,6 +79,9 @@
 	return NO;
 }
 
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations{
+	return UIInterfaceOrientationMaskPortrait;
+}
 /*=-=-=-= END OF MANDATORY VIEW METHODS =-=-=-=-*/
 
 

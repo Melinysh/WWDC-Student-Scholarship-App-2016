@@ -76,6 +76,15 @@
 {
 }
 
+- (BOOL)shouldAutorotate
+{
+	return NO;
+}
+
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations{
+	return UIInterfaceOrientationMaskPortrait;
+}
+
 -(BOOL) canBecomeFirstResponder{
 	return YES;
 }

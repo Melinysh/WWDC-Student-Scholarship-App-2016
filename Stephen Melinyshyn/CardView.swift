@@ -32,7 +32,7 @@ class CardView: UIView {
 		self.translatesAutoresizingMaskIntoConstraints = false
 
 		self.layer.shadowColor = UIColor.blackColor().CGColor
-		self.layer.shadowOpacity = 0.8
+		self.layer.shadowOpacity = 0.1
 		self.layer.shadowRadius = 4
 		self.layer.shadowOffset = CGSize(width: 3.0, height: 4.0)
 		self.layer.drawsAsynchronously = true
@@ -41,6 +41,8 @@ class CardView: UIView {
 		
 		// prepare for drop animation
 		self.alpha = 0
+		self.transform = CGAffineTransformMakeScale(1.35, 1.35)
+
 
 	}
     /*
@@ -50,7 +52,6 @@ class CardView: UIView {
         // Drawing code
     }
     */
-	
 	
 
 	override func layoutSubviews() {
