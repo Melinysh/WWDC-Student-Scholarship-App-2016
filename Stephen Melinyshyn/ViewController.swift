@@ -295,7 +295,7 @@ class ViewController: UIViewController {
 					detailVC.view.frame = self.view.frame
 					card.addSubview(detailVC.view)
 					detailVC.initViews(card.info)
-					card.removeGestureRecognizer(card.gestureRecognizers!.first!)
+					card.removeGestureRecognizer(card.gestureRecognizers!.last!)
 					
 					//	card.removeGestureRecognizer(card.gestureRecognizers!.first!)
 					let verticle = NSLayoutConstraint.constraintsWithVisualFormat("V:|[detV]|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["detV" : detailVC.view])

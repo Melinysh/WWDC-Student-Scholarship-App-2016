@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1888741CCD2ED300AF08FD /* DetailScreenshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1888731CCD2ED300AF08FD /* DetailScreenshotViewController.swift */; };
 		DC38A1101CC5B54900DFD8CB /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38A10F1CC5B54900DFD8CB /* CardData.swift */; };
 		DC5AA66C1CC67CAB000C9AB3 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA65F1CC67CAB000C9AB3 /* Ball.m */; };
 		DC5AA66D1CC67CAB000C9AB3 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6611CC67CAB000C9AB3 /* Bomb.m */; };
@@ -17,6 +18,13 @@
 		DC5AA6721CC67CAB000C9AB3 /* TapzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */; };
 		DC90CC511CC95235009EE849 /* MeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90CC501CC95235009EE849 /* MeCardViewController.swift */; };
 		DC93241D1CCBDD1900637563 /* WelcomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */; };
+		DC9D539D1CCC4A300025370F /* RezCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D539C1CCC4A300025370F /* RezCardViewController.swift */; };
+		DC9D539F1CCC4A3A0025370F /* MarketMeshCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D539E1CCC4A3A0025370F /* MarketMeshCardViewController.swift */; };
+		DC9D53A11CCC4A400025370F /* MeshwurkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D53A01CCC4A400025370F /* MeshwurkViewController.swift */; };
+		DC9D53A31CCC4A460025370F /* WWDCCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D53A21CCC4A460025370F /* WWDCCardViewController.swift */; };
+		DC9D53A51CCC4A540025370F /* WattpadCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D53A41CCC4A540025370F /* WattpadCardViewController.swift */; };
+		DC9D53A71CCC4A620025370F /* NearbeyeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D53A61CCC4A620025370F /* NearbeyeCardViewController.swift */; };
+		DC9D53A91CCC4A6E0025370F /* WellAwareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D53A81CCC4A6E0025370F /* WellAwareCardViewController.swift */; };
 		DCA336061CC5A5A8003AFF96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */; };
 		DCA336081CC5A5A8003AFF96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336071CC5A5A8003AFF96 /* ViewController.swift */; };
 		DCA3360B1CC5A5A8003AFF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA336091CC5A5A8003AFF96 /* Main.storyboard */; };
@@ -26,9 +34,11 @@
 		DCA3361A1CC5A712003AFF96 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA336191CC5A712003AFF96 /* CardView.swift */; };
 		DCCF727E1CC84D7A00C7D2E5 /* TapzCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */; };
 		DCCF72801CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF727F1CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift */; };
+		DCE550D81CCEA05C00D6BADA /* marketmesh.mov in Resources */ = {isa = PBXBuildFile; fileRef = DCE550D71CCEA05C00D6BADA /* marketmesh.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC1888731CCD2ED300AF08FD /* DetailScreenshotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenshotViewController.swift; sourceTree = "<group>"; };
 		DC38A10F1CC5B54900DFD8CB /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		DC5AA65D1CC67CAA000C9AB3 /* Stephen Melinyshyn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stephen Melinyshyn-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC5AA65E1CC67CAB000C9AB3 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
@@ -47,6 +57,13 @@
 		DC5AA66B1CC67CAB000C9AB3 /* TapzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapzViewController.m; sourceTree = "<group>"; };
 		DC90CC501CC95235009EE849 /* MeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCardViewController.swift; sourceTree = "<group>"; };
 		DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCardViewController.swift; sourceTree = "<group>"; };
+		DC9D539C1CCC4A300025370F /* RezCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RezCardViewController.swift; sourceTree = "<group>"; };
+		DC9D539E1CCC4A3A0025370F /* MarketMeshCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketMeshCardViewController.swift; sourceTree = "<group>"; };
+		DC9D53A01CCC4A400025370F /* MeshwurkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeshwurkViewController.swift; sourceTree = "<group>"; };
+		DC9D53A21CCC4A460025370F /* WWDCCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWDCCardViewController.swift; sourceTree = "<group>"; };
+		DC9D53A41CCC4A540025370F /* WattpadCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WattpadCardViewController.swift; sourceTree = "<group>"; };
+		DC9D53A61CCC4A620025370F /* NearbeyeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbeyeCardViewController.swift; sourceTree = "<group>"; };
+		DC9D53A81CCC4A6E0025370F /* WellAwareCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WellAwareCardViewController.swift; sourceTree = "<group>"; };
 		DCA336021CC5A5A8003AFF96 /* Stephen Melinyshyn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stephen Melinyshyn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA336071CC5A5A8003AFF96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +75,7 @@
 		DCA336191CC5A712003AFF96 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapzCardViewController.swift; sourceTree = "<group>"; };
 		DCCF727F1CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerProtocol.swift; sourceTree = "<group>"; };
+		DCE550D71CCEA05C00D6BADA /* marketmesh.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = marketmesh.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,14 +132,23 @@
 				DCA336051CC5A5A8003AFF96 /* AppDelegate.swift */,
 				DCA336071CC5A5A8003AFF96 /* ViewController.swift */,
 				DCCF727F1CC84DB200C7D2E5 /* DetailViewControllerProtocol.swift */,
-				DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */,
-				DC90CC501CC95235009EE849 /* MeCardViewController.swift */,
-				DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */,
 				DCA336091CC5A5A8003AFF96 /* Main.storyboard */,
+				DC1888731CCD2ED300AF08FD /* DetailScreenshotViewController.swift */,
+				DC93241C1CCBDD1900637563 /* WelcomeCardViewController.swift */,
+				DC90CC501CC95235009EE849 /* MeCardViewController.swift */,
+				DCCF727D1CC84D7A00C7D2E5 /* TapzCardViewController.swift */,
+				DC9D539C1CCC4A300025370F /* RezCardViewController.swift */,
+				DC9D539E1CCC4A3A0025370F /* MarketMeshCardViewController.swift */,
+				DC9D53A01CCC4A400025370F /* MeshwurkViewController.swift */,
+				DC9D53A61CCC4A620025370F /* NearbeyeCardViewController.swift */,
+				DC9D53A81CCC4A6E0025370F /* WellAwareCardViewController.swift */,
+				DC9D53A21CCC4A460025370F /* WWDCCardViewController.swift */,
+				DC9D53A41CCC4A540025370F /* WattpadCardViewController.swift */,
 				DCA336171CC5A63C003AFF96 /* Card.xib */,
 				DC38A10F1CC5B54900DFD8CB /* CardData.swift */,
 				DC5AA6731CC67CAF000C9AB3 /* Tapz */,
 				DCA336191CC5A712003AFF96 /* CardView.swift */,
+				DCE550D71CCEA05C00D6BADA /* marketmesh.mov */,
 				DCA3360C1CC5A5A8003AFF96 /* Assets.xcassets */,
 				DCA3360E1CC5A5A8003AFF96 /* LaunchScreen.storyboard */,
 				DCA336111CC5A5A8003AFF96 /* Info.plist */,
@@ -192,6 +219,7 @@
 				DCA3360D1CC5A5A8003AFF96 /* Assets.xcassets in Resources */,
 				DCA3360B1CC5A5A8003AFF96 /* Main.storyboard in Resources */,
 				DCA336181CC5A63C003AFF96 /* Card.xib in Resources */,
+				DCE550D81CCEA05C00D6BADA /* marketmesh.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,8 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9D53A51CCC4A540025370F /* WattpadCardViewController.swift in Sources */,
+				DC9D539D1CCC4A300025370F /* RezCardViewController.swift in Sources */,
 				DC5AA66E1CC67CAB000C9AB3 /* GameViewController.m in Sources */,
+				DC9D539F1CCC4A3A0025370F /* MarketMeshCardViewController.swift in Sources */,
 				DC5AA66D1CC67CAB000C9AB3 /* Bomb.m in Sources */,
+				DC9D53A71CCC4A620025370F /* NearbeyeCardViewController.swift in Sources */,
+				DC9D53A11CCC4A400025370F /* MeshwurkViewController.swift in Sources */,
+				DC1888741CCD2ED300AF08FD /* DetailScreenshotViewController.swift in Sources */,
 				DC5AA6711CC67CAB000C9AB3 /* ShareViewController.m in Sources */,
 				DC38A1101CC5B54900DFD8CB /* CardData.swift in Sources */,
 				DC5AA66F1CC67CAB000C9AB3 /* HowToPlayViewController.m in Sources */,
@@ -215,8 +249,10 @@
 				DCA3361A1CC5A712003AFF96 /* CardView.swift in Sources */,
 				DC5AA6721CC67CAB000C9AB3 /* TapzViewController.m in Sources */,
 				DCA336061CC5A5A8003AFF96 /* AppDelegate.swift in Sources */,
+				DC9D53A31CCC4A460025370F /* WWDCCardViewController.swift in Sources */,
 				DC90CC511CC95235009EE849 /* MeCardViewController.swift in Sources */,
 				DCCF727E1CC84D7A00C7D2E5 /* TapzCardViewController.swift in Sources */,
+				DC9D53A91CCC4A6E0025370F /* WellAwareCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
