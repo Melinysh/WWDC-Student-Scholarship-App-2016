@@ -15,6 +15,8 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 
 	@IBOutlet weak var infoField: UITextView!
 	
+	@IBOutlet weak var demoButton: UIButton!
+	@IBOutlet weak var githubButton: UIButton!
 	@IBAction func loadGithub(sender: AnyObject) {
 		let sfVC = SFSafariViewController(URL: NSURL(string: "https://github.com/jgalperin/redolent-octo-waffle")!)
 		self.presentViewController(sfVC, animated: true, completion: nil)
@@ -40,6 +42,11 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
         // Do any additional setup after loading the view.
     }
 
+	override func viewDidAppear(animated: Bool) {
+		self.animateViews()
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,6 +54,15 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 	
 	func additionalSetup(info: CardInfo) {
 		self.becomeFirstResponder()
+		demoButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		demoButton.backgroundColor = self.view.tintColor
+		demoButton.layer.cornerRadius = 4.0
+		demoButton.layer.masksToBounds = true
+		
+		githubButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		githubButton.backgroundColor = self.view.tintColor
+		githubButton.layer.cornerRadius = 4.0
+		githubButton.layer.masksToBounds = true
 	}
 
     /*

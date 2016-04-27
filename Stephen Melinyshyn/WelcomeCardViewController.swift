@@ -25,6 +25,11 @@ class WelcomeCardViewController: UIViewController, DetailViewControllable  {
 	func additionalSetup(info: CardInfo) {
 		
 	}
+	
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
+	}
     
 
     /*

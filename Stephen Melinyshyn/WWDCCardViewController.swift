@@ -22,6 +22,12 @@ class WWDCCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
+
+	}
+	
 	func additionalSetup(info: CardInfo) {
 		
 	}

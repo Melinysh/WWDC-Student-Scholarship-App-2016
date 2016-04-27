@@ -28,7 +28,17 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
-	func additionalSetup(info: CardInfo) {		
+	func additionalSetup(info: CardInfo) {
+		playButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		playButton.backgroundColor = self.view.tintColor
+		playButton.layer.cornerRadius = 4.0
+		playButton.layer.masksToBounds = true
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
+
 	}
 
 	
@@ -37,6 +47,7 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 		ball2.removeFromSuperview()
 		self.view.addSubview(ball)
 		self.view.addSubview(ball2)
+		
 		applyBallAnimations()
 	}
 	

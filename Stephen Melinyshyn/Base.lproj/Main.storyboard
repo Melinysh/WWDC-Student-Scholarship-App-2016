@@ -150,7 +150,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="879-4D-zdV"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -207,17 +207,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-g7-H5S">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="220"/>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-11-bfl">
-                                <rect key="frame" x="20" y="248" width="560" height="284"/>
+                                <rect key="frame" x="20" y="242" width="560" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLS-8d-UmJ">
-                                <rect key="frame" x="245" y="550" width="111" height="30"/>
+                                <rect key="frame" x="241" y="556" width="119" height="24"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
                                 <state key="normal" title="See My Website"/>
                             </button>
                         </subviews>
@@ -307,22 +308,23 @@
                                     <constraint firstAttribute="width" constant="84" id="TCH-Cq-Yke"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-QS-8UA">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-QS-8UA">
                                 <rect key="frame" x="267" y="550" width="66" height="30"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
                                 <state key="normal" title="Play Tapz"/>
                                 <connections>
                                     <segue destination="MF9-k2-rWA" kind="presentation" id="raM-4a-GJR"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oP1-RR-wbt">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oP1-RR-wbt">
                                 <rect key="frame" x="20" y="150" width="560" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="UII-3l-bJE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="UII-3l-bJE">
                                 <rect key="frame" x="20" y="416" width="84" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="XgI-wx-gef">
@@ -434,7 +436,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xxM-9h-zk2">
                                         <rect key="frame" x="10" y="10" width="580" height="290"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-pb-lxQ">
@@ -449,7 +451,7 @@
                                                     <rect key="frame" x="0.0" y="28" width="130" height="230"/>
                                                 </variation>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rez2" translatesAutoresizingMaskIntoConstraints="NO" id="36B-uf-3VG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rez2" translatesAutoresizingMaskIntoConstraints="NO" id="36B-uf-3VG">
                                                 <rect key="frame" x="161" y="0.0" width="160" height="285"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="36B-uf-3VG" secondAttribute="height" multiplier="9:16" id="ks0-UB-sHE"/>
@@ -458,7 +460,7 @@
                                                     <rect key="frame" x="130" y="27" width="130" height="232"/>
                                                 </variation>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rez3" translatesAutoresizingMaskIntoConstraints="NO" id="eeN-0H-otm">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rez3" translatesAutoresizingMaskIntoConstraints="NO" id="eeN-0H-otm">
                                                 <rect key="frame" x="321" y="0.0" width="269" height="285"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="eeN-0H-otm" secondAttribute="height" multiplier="9:16" id="3vZ-UM-LI1"/>
@@ -529,11 +531,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-3M-LLN">
-                                <rect key="frame" x="149.5" y="64" width="301.5" height="536"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-3M-LLN">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qqE-3M-LLN" secondAttribute="height" multiplier="9:16" id="uGo-8W-Zov"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uGo-8W-Zov"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -547,6 +554,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="BWq-fd-WGB" secondAttribute="trailing" constant="-20" id="HhZ-dC-imf"/>
                             <constraint firstItem="BWq-fd-WGB" firstAttribute="width" secondItem="X5q-vj-w2u" secondAttribute="width" id="J1j-fi-YoP"/>
                             <constraint firstItem="rZ5-21-eOI" firstAttribute="top" secondItem="qqE-3M-LLN" secondAttribute="bottom" id="bB6-7j-wu5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qqE-3M-LLN" secondAttribute="trailing" id="egm-oR-ozu"/>
+                            <constraint firstItem="qqE-3M-LLN" firstAttribute="leading" secondItem="X5q-vj-w2u" secondAttribute="leadingMargin" id="gMA-1D-gVB"/>
                             <constraint firstItem="qqE-3M-LLN" firstAttribute="top" secondItem="p5m-nc-eQ2" secondAttribute="bottom" constant="24" id="hE1-H4-Svy"/>
                             <constraint firstItem="qqE-3M-LLN" firstAttribute="centerX" secondItem="X5q-vj-w2u" secondAttribute="centerX" id="ywZ-Ef-nhA"/>
                         </constraints>
@@ -568,6 +577,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tM-hn-riQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3143" y="3376"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="Eh6-WN-k8Q">
+            <objects>
+                <viewController storyboardIdentifier="peekPreview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GNo-YB-5JF" customClass="PreviewViewController" customModule="Stephen_Melinyshyn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lV9-ar-dlc"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Hy-On-75y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gvZ-XZ-Wcn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fER-Qu-I10">
+                                <rect key="frame" x="20" y="30" width="560" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fER-Qu-I10" secondAttribute="trailing" id="54u-0m-MKr"/>
+                            <constraint firstItem="fER-Qu-I10" firstAttribute="leading" secondItem="gvZ-XZ-Wcn" secondAttribute="leadingMargin" id="dn0-CH-2ax"/>
+                            <constraint firstItem="fER-Qu-I10" firstAttribute="top" secondItem="lV9-ar-dlc" secondAttribute="bottom" constant="10" id="nZ1-eW-Igc"/>
+                            <constraint firstItem="2Hy-On-75y" firstAttribute="top" secondItem="fER-Qu-I10" secondAttribute="bottom" constant="10" id="swC-G0-rqs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="fER-Qu-I10" id="2uQ-98-bmW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFq-Aa-Hro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2981" y="4288"/>
         </scene>
         <!--Tapz View Controller-->
         <scene sceneID="PHj-cO-nDN">
@@ -865,31 +910,41 @@
                                         <rect key="frame" x="20" y="20" width="560" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNY-OC-y0Z">
-                                        <rect key="frame" x="20" y="555" width="176" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="176" id="807-kl-ZOE"/>
-                                            <constraint firstAttribute="height" constant="30" id="UBR-Vt-xjT"/>
-                                        </constraints>
-                                        <state key="normal" title="See demo of MarketMesh"/>
-                                        <connections>
-                                            <action selector="playDemo:" destination="INm-rg-ve8" eventType="touchUpInside" id="Ppa-7r-Ufc"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="techretreat" translatesAutoresizingMaskIntoConstraints="NO" id="Ohv-oz-WYc">
-                                        <rect key="frame" x="177.5" y="280" width="245" height="245"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="techretreat" translatesAutoresizingMaskIntoConstraints="NO" id="Ohv-oz-WYc">
+                                        <rect key="frame" x="177" y="280" width="245" height="245"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ohv-oz-WYc" secondAttribute="height" multiplier="1:1" id="6NO-aZ-XPS"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-th-ybb">
-                                        <rect key="frame" x="483" y="555" width="97" height="30"/>
+                                        <rect key="frame" x="475" y="561" width="105" height="24"/>
+                                        <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
                                         <state key="normal" title="See on Github"/>
                                         <connections>
                                             <action selector="loadGithub:" destination="INm-rg-ve8" eventType="touchUpInside" id="sNR-XX-Hgh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNY-OC-y0Z">
+                                        <rect key="frame" x="20" y="561" width="184" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="807-kl-ZOE"/>
+                                            <constraint firstAttribute="height" constant="24" id="Jvn-TH-cdn"/>
+                                            <constraint firstAttribute="height" constant="30" id="UBR-Vt-xjT"/>
+                                            <constraint firstAttribute="width" constant="184" id="a6N-TC-kzA"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
+                                        <state key="normal" title="See demo of MarketMesh"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="807-kl-ZOE"/>
+                                                <exclude reference="UBR-Vt-xjT"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="playDemo:" destination="INm-rg-ve8" eventType="touchUpInside" id="Ppa-7r-Ufc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -936,6 +991,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="demoButton" destination="bNY-OC-y0Z" id="Urt-wG-Z25"/>
+                        <outlet property="githubButton" destination="wDj-th-ybb" id="ho6-Kl-35F"/>
                         <outlet property="infoField" destination="Uo8-az-Ybt" id="VPi-Kw-Vwy"/>
                     </connections>
                 </viewController>
@@ -962,14 +1019,14 @@
                                         <rect key="frame" x="20" y="20" width="560" height="248"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-LQ-Glz">
-                                        <rect key="frame" x="0.0" y="278" width="600" height="322"/>
+                                        <rect key="frame" x="0.0" y="278" width="600" height="278"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nearbeye1" translatesAutoresizingMaskIntoConstraints="NO" id="pdS-B6-jJq">
-                                                <rect key="frame" x="0.0" y="0.0" width="182" height="322"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="278"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pdS-B6-jJq" secondAttribute="height" multiplier="9:16" id="ofv-ff-Hr1"/>
                                                 </constraints>
@@ -978,7 +1035,7 @@
                                                 </variation>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nearbeye2" translatesAutoresizingMaskIntoConstraints="NO" id="Tz0-LE-prg">
-                                                <rect key="frame" x="182" y="0.0" width="182" height="322"/>
+                                                <rect key="frame" x="157" y="0.0" width="157" height="278"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Tz0-LE-prg" secondAttribute="height" multiplier="9:16" id="533-7y-XaJ"/>
                                                 </constraints>
@@ -987,7 +1044,7 @@
                                                 </variation>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nearbeye3" translatesAutoresizingMaskIntoConstraints="NO" id="vPk-f9-XOL">
-                                                <rect key="frame" x="364" y="0.0" width="237" height="322"/>
+                                                <rect key="frame" x="314" y="0.0" width="286" height="278"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vPk-f9-XOL" secondAttribute="height" multiplier="9:16" id="W4S-lG-oQw"/>
                                                 </constraints>
@@ -997,17 +1054,36 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJh-kG-PLc">
+                                        <rect key="frame" x="248" y="566" width="105" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="mIy-VQ-uDe"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
+                                        <state key="normal" title="See on Github"/>
+                                        <connections>
+                                            <action selector="seeOnGithub:" destination="PvR-c9-N1g" eventType="touchUpInside" id="SIW-Mt-YKT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="lTb-LQ-Glz" secondAttribute="bottom" id="0Zg-s5-EPg"/>
+                                    <constraint firstAttribute="bottom" secondItem="lTb-LQ-Glz" secondAttribute="bottom" constant="30" id="0Zg-s5-EPg"/>
                                     <constraint firstItem="lTb-LQ-Glz" firstAttribute="top" secondItem="qjh-bU-z7l" secondAttribute="bottom" constant="10" id="0g6-5S-sNd"/>
                                     <constraint firstAttribute="trailing" secondItem="lTb-LQ-Glz" secondAttribute="trailing" id="TI7-DW-sA5"/>
                                     <constraint firstAttribute="trailing" secondItem="qjh-bU-z7l" secondAttribute="trailing" constant="20" id="ZGc-RK-P5W"/>
+                                    <constraint firstItem="TJh-kG-PLc" firstAttribute="top" secondItem="lTb-LQ-Glz" secondAttribute="bottom" constant="10" id="azI-ww-Mn2"/>
                                     <constraint firstItem="qjh-bU-z7l" firstAttribute="top" secondItem="vPB-lq-8Jx" secondAttribute="top" constant="20" id="bbd-Sb-0Yd"/>
                                     <constraint firstAttribute="bottom" secondItem="qjh-bU-z7l" secondAttribute="bottom" constant="332" id="bkf-kW-KyC"/>
                                     <constraint firstItem="lTb-LQ-Glz" firstAttribute="leading" secondItem="vPB-lq-8Jx" secondAttribute="leading" id="d89-Ao-teP"/>
+                                    <constraint firstItem="TJh-kG-PLc" firstAttribute="centerX" secondItem="vPB-lq-8Jx" secondAttribute="centerX" id="hVp-cJ-618"/>
                                     <constraint firstItem="qjh-bU-z7l" firstAttribute="leading" secondItem="vPB-lq-8Jx" secondAttribute="leading" constant="20" id="i9x-ZW-lqF"/>
+                                    <constraint firstAttribute="bottom" secondItem="TJh-kG-PLc" secondAttribute="bottom" constant="10" id="vMt-NX-sbn"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Zg-s5-EPg"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1019,6 +1095,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="githubButton" destination="TJh-kG-PLc" id="SGJ-NH-TmQ"/>
                         <outlet property="infoField" destination="qjh-bU-z7l" id="8vr-vS-iu4"/>
                         <outlet property="screenshot1" destination="pdS-B6-jJq" id="noM-kP-nyp"/>
                         <outlet property="screenshot2" destination="Tz0-LE-prg" id="4Ur-8A-I6v"/>
@@ -1046,19 +1123,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jfx-Of-uR6">
-                                        <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                        <rect key="frame" x="20" y="20" width="560" height="380"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="G25-DF-sV0">
+                                        <rect key="frame" x="20" y="420" width="170" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="G25-DF-sV0" secondAttribute="height" multiplier="1:1" id="K1V-Ra-IaU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcode" translatesAutoresizingMaskIntoConstraints="NO" id="E7w-if-NN6">
+                                        <rect key="frame" x="410" y="420" width="170" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="E7w-if-NN6" secondAttribute="height" multiplier="1:1" id="Nbu-4w-PPn"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Jfx-Of-uR6" secondAttribute="bottom" constant="20" id="134-qF-DoW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jfx-Of-uR6" secondAttribute="bottom" constant="200" id="134-qF-DoW"/>
+                                    <constraint firstItem="G25-DF-sV0" firstAttribute="top" secondItem="Jfx-Of-uR6" secondAttribute="bottom" constant="20" id="41g-Vv-lKF"/>
                                     <constraint firstItem="Jfx-Of-uR6" firstAttribute="top" secondItem="zvt-B3-9zU" secondAttribute="top" constant="20" id="63i-1s-Uu7"/>
                                     <constraint firstItem="Jfx-Of-uR6" firstAttribute="leading" secondItem="zvt-B3-9zU" secondAttribute="leading" constant="20" id="8rv-Fl-QSk"/>
                                     <constraint firstAttribute="trailing" secondItem="Jfx-Of-uR6" secondAttribute="trailing" constant="20" id="CoQ-H1-brS"/>
+                                    <constraint firstItem="E7w-if-NN6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G25-DF-sV0" secondAttribute="trailing" constant="10" id="EFy-47-wd2"/>
+                                    <constraint firstItem="E7w-if-NN6" firstAttribute="width" secondItem="E7w-if-NN6" secondAttribute="height" multiplier="1:1" id="TBj-Yn-3ZT"/>
+                                    <constraint firstItem="G25-DF-sV0" firstAttribute="leading" secondItem="zvt-B3-9zU" secondAttribute="leading" constant="20" id="Wue-Zh-zNK"/>
+                                    <constraint firstAttribute="bottom" secondItem="E7w-if-NN6" secondAttribute="bottom" constant="10" id="byl-n9-0ta"/>
+                                    <constraint firstAttribute="trailing" secondItem="E7w-if-NN6" secondAttribute="trailing" constant="20" id="gOt-ti-lMN"/>
+                                    <constraint firstAttribute="bottom" secondItem="G25-DF-sV0" secondAttribute="bottom" constant="10" id="k6h-cr-jTD"/>
+                                    <constraint firstItem="E7w-if-NN6" firstAttribute="top" secondItem="Jfx-Of-uR6" secondAttribute="bottom" constant="20" id="yCX-bj-IaV"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TBj-Yn-3ZT"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1093,19 +1195,46 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l3l-wa-bCG">
-                                        <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                        <rect key="frame" x="20" y="20" width="560" height="255"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DI2-Or-Fau">
+                                        <rect key="frame" x="10" y="295" width="580" height="305"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellaware1" translatesAutoresizingMaskIntoConstraints="NO" id="DpU-G3-x7Z">
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="305"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="DpU-G3-x7Z" secondAttribute="height" multiplier="9:16" id="VPt-MU-Q6r"/>
+                                                </constraints>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="28" width="130" height="230"/>
+                                                </variation>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellaware2" translatesAutoresizingMaskIntoConstraints="NO" id="sLo-rU-tTg">
+                                                <rect key="frame" x="408" y="0.0" width="172" height="305"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sLo-rU-tTg" secondAttribute="height" multiplier="9:16" id="bE0-be-UUO"/>
+                                                </constraints>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="130" y="27" width="130" height="232"/>
+                                                </variation>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="2Ii-nt-Ema"/>
                                     <constraint firstAttribute="trailing" secondItem="l3l-wa-bCG" secondAttribute="trailing" constant="20" id="6Kd-B6-bmz"/>
                                     <constraint firstItem="l3l-wa-bCG" firstAttribute="top" secondItem="FWL-wy-XGz" secondAttribute="top" constant="20" id="A61-qx-1Ea"/>
                                     <constraint firstItem="l3l-wa-bCG" firstAttribute="leading" secondItem="FWL-wy-XGz" secondAttribute="leading" constant="20" id="E6c-vN-B25"/>
-                                    <constraint firstAttribute="bottom" secondItem="l3l-wa-bCG" secondAttribute="bottom" constant="20" id="LB2-ST-qM4"/>
+                                    <constraint firstAttribute="trailing" secondItem="DI2-Or-Fau" secondAttribute="trailing" constant="10" id="I6j-z4-41f"/>
+                                    <constraint firstItem="DI2-Or-Fau" firstAttribute="leading" secondItem="FWL-wy-XGz" secondAttribute="leading" constant="10" id="Jc9-m1-7XV"/>
+                                    <constraint firstAttribute="bottom" secondItem="l3l-wa-bCG" secondAttribute="bottom" constant="325" id="LB2-ST-qM4"/>
+                                    <constraint firstAttribute="bottom" secondItem="DI2-Or-Fau" secondAttribute="bottom" id="ZJS-7d-hxA"/>
+                                    <constraint firstItem="DI2-Or-Fau" firstAttribute="top" secondItem="l3l-wa-bCG" secondAttribute="bottom" constant="20" id="ZqT-lf-MRO"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1132,6 +1261,9 @@
                     </view>
                     <connections>
                         <outlet property="infoField" destination="l3l-wa-bCG" id="eWA-BV-hlx"/>
+                        <outlet property="screenshot1" destination="DpU-G3-x7Z" id="Iui-Kb-FjO"/>
+                        <outlet property="screenshot2" destination="sLo-rU-tTg" id="4TZ-bY-Wrw"/>
+                        <outlet property="stackView" destination="DI2-Or-Fau" id="1Nm-kb-dRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5A-L2-hbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1154,18 +1286,52 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HPP-5h-ln7">
-                                        <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                        <rect key="frame" x="20" y="20" width="560" height="259"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAt-JO-O1w">
+                                        <rect key="frame" x="233" y="555" width="134" height="24"/>
+                                        <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
+                                        <state key="normal" title="Visit Wattpad.com"/>
+                                        <connections>
+                                            <action selector="goToWattpad:" destination="pqH-1a-hDn" eventType="touchUpInside" id="pJP-sr-QpW"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LdL-4u-mQR">
+                                        <rect key="frame" x="20" y="287" width="560" height="243"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wattpad1" translatesAutoresizingMaskIntoConstraints="NO" id="xER-dW-89c">
+                                                <rect key="frame" x="0.0" y="0.0" width="243" height="243"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xER-dW-89c" secondAttribute="height" multiplier="1:1" id="FZH-2t-Xb8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wattpad2" translatesAutoresizingMaskIntoConstraints="NO" id="xym-9d-2ba">
+                                                <rect key="frame" x="317" y="0.0" width="243" height="243"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xym-9d-2ba" secondAttribute="height" multiplier="1:1" id="WnR-sL-PXZ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xER-dW-89c" firstAttribute="width" secondItem="xym-9d-2ba" secondAttribute="width" id="UEM-nK-rA0"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HPP-5h-ln7" secondAttribute="bottom" constant="20" id="39S-bJ-TVz"/>
+                                    <constraint firstAttribute="bottom" secondItem="HPP-5h-ln7" secondAttribute="bottom" constant="321" id="39S-bJ-TVz"/>
+                                    <constraint firstItem="QAt-JO-O1w" firstAttribute="top" secondItem="LdL-4u-mQR" secondAttribute="bottom" constant="25" id="6bj-3x-3I3"/>
+                                    <constraint firstItem="LdL-4u-mQR" firstAttribute="leading" secondItem="7Vl-dx-kPb" secondAttribute="leading" constant="20" id="BNO-XA-6CJ"/>
+                                    <constraint firstItem="QAt-JO-O1w" firstAttribute="centerX" secondItem="7Vl-dx-kPb" secondAttribute="centerX" id="DmF-n5-nSG"/>
                                     <constraint firstItem="HPP-5h-ln7" firstAttribute="leading" secondItem="7Vl-dx-kPb" secondAttribute="leading" constant="20" id="Mhc-tx-wuD"/>
                                     <constraint firstItem="HPP-5h-ln7" firstAttribute="top" secondItem="7Vl-dx-kPb" secondAttribute="top" constant="20" id="OnG-xu-Btu"/>
                                     <constraint firstAttribute="trailing" secondItem="HPP-5h-ln7" secondAttribute="trailing" constant="20" id="f4L-MA-6aI"/>
+                                    <constraint firstAttribute="trailing" secondItem="LdL-4u-mQR" secondAttribute="trailing" constant="20" id="iBr-Fk-1ib"/>
+                                    <constraint firstAttribute="bottom" secondItem="QAt-JO-O1w" secondAttribute="bottom" constant="21" id="lev-eL-ytW"/>
+                                    <constraint firstItem="LdL-4u-mQR" firstAttribute="top" secondItem="HPP-5h-ln7" secondAttribute="bottom" constant="8" id="z9I-Sp-eUf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1178,7 +1344,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="image1" destination="xER-dW-89c" id="US5-6f-ivU"/>
+                        <outlet property="image2" destination="xym-9d-2ba" id="TjR-j2-QCW"/>
                         <outlet property="infoField" destination="HPP-5h-ln7" id="B4f-Ud-6jt"/>
+                        <outlet property="stackView" destination="LdL-4u-mQR" id="gDc-yl-QWf"/>
+                        <outlet property="wattpadButton" destination="QAt-JO-O1w" id="1Ch-vE-0TU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEU-TX-0YK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1201,17 +1371,66 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X18-Py-AXO">
-                                        <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                        <rect key="frame" x="20" y="20" width="560" height="237"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsH-gT-xvI">
+                                        <rect key="frame" x="247.5" y="566" width="105" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="9wa-09-k3H"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
+                                        <state key="normal" title="See on Github"/>
+                                        <connections>
+                                            <action selector="seeOnGithub:" destination="ry5-0y-hKV" eventType="touchUpInside" id="WWA-sV-Fdb"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-T0-Th5">
+                                        <rect key="frame" x="0.0" y="277" width="600" height="269"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meshwurk1" translatesAutoresizingMaskIntoConstraints="NO" id="1Zg-QU-GPx">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="269"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="1Zg-QU-GPx" secondAttribute="height" multiplier="9:16" id="ZcS-7Z-khs"/>
+                                                </constraints>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="28" width="130" height="230"/>
+                                                </variation>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="meshwurk2" translatesAutoresizingMaskIntoConstraints="NO" id="kX8-6N-W2p">
+                                                <rect key="frame" x="152" y="0.0" width="152" height="269"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kX8-6N-W2p" secondAttribute="height" multiplier="9:16" id="c0X-GU-hMc"/>
+                                                </constraints>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="130" y="27" width="130" height="232"/>
+                                                </variation>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="meshwurk3" translatesAutoresizingMaskIntoConstraints="NO" id="Mzb-Ud-mes">
+                                                <rect key="frame" x="304" y="0.0" width="297" height="269"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Mzb-Ud-mes" secondAttribute="height" multiplier="9:16" id="zsf-BP-J4N"/>
+                                                </constraints>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="260" y="27" width="130" height="231"/>
+                                                </variation>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="vkh-T0-Th5" firstAttribute="leading" secondItem="uud-Qs-DbS" secondAttribute="leading" id="8Tn-ZM-L1F"/>
+                                    <constraint firstItem="vkh-T0-Th5" firstAttribute="top" secondItem="X18-Py-AXO" secondAttribute="bottom" constant="20" id="C3l-KT-7ty"/>
                                     <constraint firstAttribute="trailing" secondItem="X18-Py-AXO" secondAttribute="trailing" constant="20" id="FeX-tb-XGz"/>
+                                    <constraint firstItem="rsH-gT-xvI" firstAttribute="centerX" secondItem="uud-Qs-DbS" secondAttribute="centerX" id="cF8-sS-jI9"/>
+                                    <constraint firstAttribute="trailing" secondItem="vkh-T0-Th5" secondAttribute="trailing" id="ijl-Cm-Z1g"/>
                                     <constraint firstItem="X18-Py-AXO" firstAttribute="top" secondItem="uud-Qs-DbS" secondAttribute="top" constant="20" id="jNv-xZ-osb"/>
-                                    <constraint firstAttribute="bottom" secondItem="X18-Py-AXO" secondAttribute="bottom" constant="20" id="rwR-li-QY1"/>
+                                    <constraint firstAttribute="bottom" secondItem="rsH-gT-xvI" secondAttribute="bottom" constant="10" id="ngO-4O-aod"/>
+                                    <constraint firstItem="rsH-gT-xvI" firstAttribute="top" secondItem="vkh-T0-Th5" secondAttribute="bottom" constant="20" id="rq7-gr-Fu6"/>
+                                    <constraint firstAttribute="bottom" secondItem="X18-Py-AXO" secondAttribute="bottom" constant="343" id="rwR-li-QY1"/>
                                     <constraint firstItem="X18-Py-AXO" firstAttribute="leading" secondItem="uud-Qs-DbS" secondAttribute="leading" constant="20" id="u8g-1v-vK1"/>
                                 </constraints>
                             </view>
@@ -1225,26 +1444,40 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="githubButton" destination="rsH-gT-xvI" id="HXf-Nj-Vvx"/>
                         <outlet property="infoField" destination="X18-Py-AXO" id="GUo-Y9-qvS"/>
+                        <outlet property="screenshot1" destination="1Zg-QU-GPx" id="hv7-9Z-vkT"/>
+                        <outlet property="screenshot2" destination="kX8-6N-W2p" id="heE-m6-5Kw"/>
+                        <outlet property="screenshot3" destination="Mzb-Ud-mes" id="qbs-X6-fzW"/>
+                        <outlet property="stackView" destination="vkh-T0-Th5" id="jUg-Ky-y8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sa4-4g-rTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="4128"/>
+            <point key="canvasLocation" x="2024" y="4098"/>
         </scene>
     </scenes>
     <resources>
         <image name="ResetButton" width="46" height="46"/>
         <image name="UndoButton" width="46" height="46"/>
         <image name="ball" width="128" height="128"/>
+        <image name="meshwurk1" width="375" height="667"/>
+        <image name="meshwurk2" width="375" height="636"/>
+        <image name="meshwurk3" width="375" height="667"/>
         <image name="nearbeye1" width="332" height="591"/>
         <image name="nearbeye2" width="332" height="591"/>
         <image name="nearbeye3" width="332" height="591"/>
         <image name="rez1" width="465" height="828"/>
         <image name="rez2" width="465" height="828"/>
         <image name="rez3" width="465" height="828"/>
+        <image name="swift" width="300" height="300"/>
         <image name="techretreat" width="317" height="316"/>
+        <image name="wattpad1" width="350" height="350"/>
+        <image name="wattpad2" width="350" height="350"/>
+        <image name="wellaware1" width="375" height="667"/>
+        <image name="wellaware2" width="375" height="667"/>
         <image name="wwdc-thumb" width="600" height="400"/>
+        <image name="xcode" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="raM-4a-GJR"/>

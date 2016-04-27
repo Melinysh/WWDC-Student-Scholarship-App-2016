@@ -25,6 +25,13 @@ class MeCardViewController: UIViewController, DetailViewControllable {
 
         // Do any additional setup after loading the view.
     }
+	
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
+
+	}
+	
 	override func canBecomeFirstResponder() -> Bool {
 		return true
 	}
@@ -41,6 +48,10 @@ class MeCardViewController: UIViewController, DetailViewControllable {
 		let zoomLocation = CLLocationCoordinate2D(latitude: 44.2286091, longitude: -76.4837246)
 		let viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2000.344, 2000.344)
 		mapView.setRegion(viewRegion, animated: true)
+		websiteButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		websiteButton.backgroundColor = self.view.tintColor
+		websiteButton.layer.cornerRadius = 4.0
+		websiteButton.layer.masksToBounds = true
 	}
 
     /*

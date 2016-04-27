@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SafariServices
 
 class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 
+	@IBOutlet weak var githubButton: UIButton!
 	@IBOutlet weak var screenshot3: UIImageView!
 	@IBOutlet weak var screenshot2: UIImageView!
 	@IBOutlet weak var screenshot1: UIImageView!
@@ -20,6 +22,10 @@ class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 
         // Do any additional setup after loading the view.
     }
+	@IBAction func seeOnGithub(sender: AnyObject) {
+		let sfVC = SFSafariViewController(URL: NSURL(string: "https://github.com/Melinysh/NearbEYE")!)
+		self.presentViewController(sfVC, animated: true, completion: nil)
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,15 +36,27 @@ class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 	override func canBecomeFirstResponder() -> Bool {
 		return true
 	}
+	
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
+
+	}
+	
 	func additionalSetup(info: CardInfo) {
 		self.becomeFirstResponder()
+		githubButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		githubButton.backgroundColor = self.view.tintColor
+		githubButton.layer.cornerRadius = 4.0
+		githubButton.layer.masksToBounds = true
+
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
 	}
 	
 	func didTap(sender : UIGestureRecognizer) {
 		let pt = sender.locationInView(stackview)
 		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("screenshotDetail") as! DetailScreenshotViewController
-		detailVC.view.frame = detailVC.view.frame // init's the view so it isn't nil
+		detailVC.view.backgroundColor = self.view.backgroundColor
 		if CGRectContainsPoint(screenshot1.frame, pt) {
 			detailVC.imageView.image = screenshot1.image
 			detailVC.navBar.topItem?.title = "Main Camera View"

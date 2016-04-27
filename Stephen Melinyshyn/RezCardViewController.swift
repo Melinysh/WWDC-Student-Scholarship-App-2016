@@ -32,6 +32,12 @@ class RezCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
+
+	}
+	
 	func additionalSetup(info: CardInfo) {
 		self.becomeFirstResponder()
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
@@ -40,7 +46,7 @@ class RezCardViewController: UIViewController, DetailViewControllable {
 	func didTap(sender : UIGestureRecognizer) {
 		let pt = sender.locationInView(stackView)
 		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("screenshotDetail") as! DetailScreenshotViewController
-		detailVC.view.frame = detailVC.view.frame // init's the view so it isn't nil
+		detailVC.view.backgroundColor = self.view.backgroundColor
 		if CGRectContainsPoint(screenshot1.frame, pt) {
 			detailVC.imageView.image = screenshot1.image
 			detailVC.navBar.topItem?.title = "Main Items View"

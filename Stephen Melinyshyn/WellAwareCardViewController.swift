@@ -9,8 +9,12 @@
 import UIKit
 
 class WellAwareCardViewController: UIViewController, DetailViewControllable {
+	@IBOutlet weak var stackView: UIStackView!
 
+	@IBOutlet weak var screenshot1: UIImageView!
+	@IBOutlet weak var screenshot2: UIImageView!
 	@IBOutlet weak var infoField: UITextView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +26,37 @@ class WellAwareCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
-	func additionalSetup(info: CardInfo) {
-		
-	}
+	override func viewDidAppear(animated: Bool) {
+		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.animateViews()
 
+	}
+	
+	override func canBecomeFirstResponder() -> Bool {
+		return true
+	}
+	
+	func additionalSetup(info: CardInfo) {
+		becomeFirstResponder()
+		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
+	}
+	
+	func didTap(sender : UIGestureRecognizer) {
+		let pt = sender.locationInView(stackView)
+		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("screenshotDetail") as! DetailScreenshotViewController
+		detailVC.view.backgroundColor = self.view.backgroundColor
+		if CGRectContainsPoint(screenshot1.frame, pt) {
+			detailVC.imageView.image = screenshot1.image
+			detailVC.navBar.topItem?.title = "Work-In-Progress Menu"
+		}  else if CGRectContainsPoint(screenshot2.frame, pt) {
+			detailVC.imageView.image = screenshot2.image
+			detailVC.navBar.topItem?.title = "Main Map View"
+		} else {
+			return
+		}
+		self.presentViewController(detailVC, animated: true, completion: nil)
+	}
+	
     /*
     // MARK: - Navigation
 

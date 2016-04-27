@@ -24,6 +24,8 @@ class ViewController: UIViewController {
 	var verticleOffset : CGFloat!
 	var horizontalOffset : CGFloat!
 	
+	var previewingContext : UIViewControllerPreviewing!
+	
 	@IBOutlet weak var resetButton: UIButton!
 	@IBOutlet weak var undoButton: UIButton!
 	
@@ -122,6 +124,9 @@ class ViewController: UIViewController {
 							self.presentViewController(alert, animated: true, completion: nil)
 						}
 						print("There are \(self.view.subviews.count) subviews left.")
+						if self.traitCollection.forceTouchCapability == .Available {
+							self.previewingContext = self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+						}
 				})
 				
 			}
@@ -133,6 +138,9 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		animator = UIDynamicAnimator(referenceView: view)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
+		if traitCollection.forceTouchCapability == .Available {
+			previewingContext =  self.registerForPreviewingWithDelegate(self, sourceView: view)
+		}
 	}
 	
 	override func viewDidDisappear(animated: Bool) {
@@ -274,7 +282,7 @@ class ViewController: UIViewController {
 	}
 
 	// Card Interactions
-	func didTapCard(tap : UITapGestureRecognizer) {
+	func didTapCard(tap : UITapGestureRecognizer?) {
 		guard let card = self.view.subviews.last as? CardView else { return }
 		if card.stackView.alpha == 0 { return } // card has already been expanded
 		UIView.animateWithDuration(0.15, animations: {
@@ -303,7 +311,11 @@ class ViewController: UIViewController {
 					card.addConstraints(verticle + horizontal)
 					card.updateConstraints()
 					detailVC.view.updateConstraints()
-					detailVC.animateViews()
+					//detailVC.animateViews()
+					
+					if self.traitCollection.forceTouchCapability == .Available {
+						self.unregisterForPreviewingWithContext(self.previewingContext)
+					}
 				}
 		}
 	}
