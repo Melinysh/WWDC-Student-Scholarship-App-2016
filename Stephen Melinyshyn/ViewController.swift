@@ -21,6 +21,13 @@ class ViewController: UIViewController {
 	let progressIndicator = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
 	
 	
+	var cardIndexToDrop = -1 {
+		didSet {
+			self.generateCardViews()
+			self.dropUptoCard(cardIndexToDrop)
+		}
+	}
+	
 	var verticleOffset : CGFloat!
 	var horizontalOffset : CGFloat!
 	
@@ -153,9 +160,10 @@ class ViewController: UIViewController {
 		progressIndicator.translatesAutoresizingMaskIntoConstraints = false
 		view.insertSubview(progressIndicator, atIndex: 1)
 		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[indicator]|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["indicator" : progressIndicator]))
-		generateCardViews()
-		dropCards()
-		
+		if cardIndexToDrop == -1 {
+			generateCardViews()
+			dropCards()
+		}
 	}
 	
 	
@@ -190,8 +198,45 @@ class ViewController: UIViewController {
 	}
 	
 	func dropUptoCard(cardNumber : Int) {
-		cardViews = Array(cardViews[0..<cardNumber])
-		dropCards()
+		verticleOffset = self.view.frame.height/7
+		horizontalOffset = self.view.frame.width/11
+
+		for i in 0..<cardNumber {
+			let card = cardViews[i]
+			if i == cardNumber - 1 {
+				self.viewsAndRotations[card] = CGFloat(0)
+				self.view.backgroundColor = card.backgroundColor
+				UIApplication.sharedApplication().keyWindow?.backgroundColor = card.backgroundColor
+			}
+			
+			// prepare to animate
+			self.view.addSubview(card)
+			
+			// apply constraints
+			applyConstraintsToCard(card)
+			
+			UIView.animateWithDuration(0.30, delay: 0.3 * Double(i), usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+				card.alpha = 1
+				card.layer.shadowOpacity = 0.8
+				card.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(self.viewsAndRotations[card]!), CGAffineTransformMakeScale(1, 1))
+				}, completion: nil)
+		}
+			UIView.animateWithDuration(0.40, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+				if cardNumber == self.cardViews.count-1 {
+					self.undoButton.alpha = 0
+				} else {
+					self.undoButton.alpha = 1
+				}
+				}, completion: nil)
+		
+		// set rotation back to zero on other cards
+		self.progressIndicator.setProgress(0, animated: false)
+		for i in cardNumber..<cardViews.count {
+			self.viewsAndRotations[cardViews[i]] = 0
+			let newProgress = Float(1.0) / Float(self.cardViews.count) + self.progressIndicator.progress
+			self.progressIndicator.setProgress(newProgress, animated: true)
+		}
+		self.progressIndicator.tintColor = cardViews[cardNumber-1].backgroundColor
 	}
 	
 

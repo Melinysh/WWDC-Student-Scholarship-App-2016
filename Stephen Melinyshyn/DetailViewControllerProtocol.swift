@@ -24,6 +24,7 @@ extension DetailViewControllable {
 		infoField.textColor = info.textColor
 		infoField.layer.cornerRadius = 5
 		infoField.editable = false
+		infoField.selectable = false
 		infoField.font = UIFont(name: "Avenir-Book", size: 19)
 		view.subviews.forEach { $0.alpha = 0 }
 		additionalSetup(info)

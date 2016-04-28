@@ -15,6 +15,7 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 
 	@IBOutlet weak var infoField: UITextView!
 	
+	@IBOutlet weak var teamPhoto: UIImageView!
 	@IBOutlet weak var demoButton: UIButton!
 	@IBOutlet weak var githubButton: UIButton!
 	@IBAction func loadGithub(sender: AnyObject) {

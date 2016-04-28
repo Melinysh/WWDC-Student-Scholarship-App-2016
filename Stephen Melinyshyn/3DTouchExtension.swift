@@ -20,7 +20,7 @@ extension ViewController : UIViewControllerPreviewingDelegate {
 		viewController.textField.textColor = topCard.info.textColor
 		viewController.textField.layer.cornerRadius = 5
 		viewController.textField.editable = false
-		viewController.preferredContentSize = CGSize(width: 150, height: 200)
+		viewController.preferredContentSize = CGSize(width: topCard.frame.width/2, height: topCard.frame.height/2)
 		
 		return viewController
 	}

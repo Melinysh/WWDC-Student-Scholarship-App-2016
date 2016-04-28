@@ -20,6 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window?.opaque = false
 		return true
 	}
+	
+	func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+		guard let vc = self.window?.rootViewController as? ViewController else {
+			completionHandler(false)
+			return
+		}
+		vc.view.frame = vc.view.frame // so the view gets init'ed
+		// note that the indexes are reversed upon card array generation
+		if shortcutItem.localizedTitle.containsString("MarketMesh") {
+			vc.cardIndexToDrop = 6
+		} else if shortcutItem.localizedTitle.containsString("Meshwurk") {
+			vc.cardIndexToDrop = 5
+		} else if shortcutItem.localizedTitle.containsString("NearbEYE") {
+			vc.cardIndexToDrop = 4
+		} else {
+			completionHandler(false)
+			return
+		}
+			completionHandler(true)
+	}
 
 	func applicationWillResignActive(application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
