@@ -24,6 +24,13 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 	}
 	
 	@IBAction func playDemo(sender: AnyObject) {
+		do {
+			try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+			try AVAudioSession.sharedInstance().setActive(true)
+		} catch {
+			print("CAUGHT ERROR: \(error)")
+			
+		}
 		let path = NSBundle.mainBundle().pathForResource("marketmesh", ofType:"mov")!
 		let player = AVPlayer(URL: NSURL(fileURLWithPath: path))
 		let playerController = AVPlayerViewController()

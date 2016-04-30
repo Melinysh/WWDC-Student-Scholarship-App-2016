@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DC1888741CCD2ED300AF08FD /* DetailScreenshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1888731CCD2ED300AF08FD /* DetailScreenshotViewController.swift */; };
+		DC1BE20D1CCFA844005FCC1A /* 3DTouchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE20C1CCFA844005FCC1A /* 3DTouchExtension.swift */; };
+		DC1BE20F1CCFAB0B005FCC1A /* 3DTouchPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE20E1CCFAB0B005FCC1A /* 3DTouchPreviewViewController.swift */; };
 		DC38A1101CC5B54900DFD8CB /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38A10F1CC5B54900DFD8CB /* CardData.swift */; };
 		DC5AA66C1CC67CAB000C9AB3 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA65F1CC67CAB000C9AB3 /* Ball.m */; };
 		DC5AA66D1CC67CAB000C9AB3 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA6611CC67CAB000C9AB3 /* Bomb.m */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		DC1888731CCD2ED300AF08FD /* DetailScreenshotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenshotViewController.swift; sourceTree = "<group>"; };
+		DC1BE20C1CCFA844005FCC1A /* 3DTouchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DTouchExtension.swift; sourceTree = "<group>"; };
+		DC1BE20E1CCFAB0B005FCC1A /* 3DTouchPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DTouchPreviewViewController.swift; sourceTree = "<group>"; };
 		DC38A10F1CC5B54900DFD8CB /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		DC5AA65D1CC67CAA000C9AB3 /* Stephen Melinyshyn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stephen Melinyshyn-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC5AA65E1CC67CAB000C9AB3 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				DC9D53A21CCC4A460025370F /* WWDCCardViewController.swift */,
 				DC9D53A41CCC4A540025370F /* WattpadCardViewController.swift */,
 				DCA336171CC5A63C003AFF96 /* Card.xib */,
+				DC1BE20E1CCFAB0B005FCC1A /* 3DTouchPreviewViewController.swift */,
+				DC1BE20C1CCFA844005FCC1A /* 3DTouchExtension.swift */,
 				DC38A10F1CC5B54900DFD8CB /* CardData.swift */,
 				DC5AA6731CC67CAF000C9AB3 /* Tapz */,
 				DCA336191CC5A712003AFF96 /* CardView.swift */,
@@ -230,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1BE20D1CCFA844005FCC1A /* 3DTouchExtension.swift in Sources */,
+				DC1BE20F1CCFAB0B005FCC1A /* 3DTouchPreviewViewController.swift in Sources */,
 				DC9D53A51CCC4A540025370F /* WattpadCardViewController.swift in Sources */,
 				DC9D539D1CCC4A300025370F /* RezCardViewController.swift in Sources */,
 				DC5AA66E1CC67CAB000C9AB3 /* GameViewController.m in Sources */,
