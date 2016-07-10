@@ -16,8 +16,8 @@ class MeCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var mapView: MKMapView!
 
 	func buttonPressed() {
-		let sfVC = SFSafariViewController(URL: NSURL(string: "https://melinysh.me")!)
-		self.presentViewController(sfVC, animated: true, completion: nil)
+		let sfVC = SFSafariViewController(url: URL(string: "https://melinysh.me")!)
+		self.present(sfVC, animated: true, completion: nil)
 	}
 	
     override func viewDidLoad() {
@@ -26,8 +26,8 @@ class MeCardViewController: UIViewController, DetailViewControllable {
         // Do any additional setup after loading the view.
     }
 	
-	override func viewDidAppear(animated: Bool) {
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
 
 	}
@@ -41,14 +41,14 @@ class MeCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
-	func additionalSetup(info: CardInfo)  {
+	func additionalSetup(_ info: CardInfo)  {
 		self.becomeFirstResponder()
-		websiteButton.enabled = true
-		websiteButton.addTarget(self, action: #selector(buttonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+		websiteButton.isEnabled = true
+		websiteButton.addTarget(self, action: #selector(buttonPressed), for: UIControlEvents.touchUpInside)
 		let zoomLocation = CLLocationCoordinate2D(latitude: 44.2286091, longitude: -76.4837246)
 		let viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2000.344, 2000.344)
 		mapView.setRegion(viewRegion, animated: true)
-		websiteButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		websiteButton.setTitleColor(UIColor.white(), for: UIControlState())
 		websiteButton.backgroundColor = self.view.tintColor
 		websiteButton.layer.cornerRadius = 4.0
 		websiteButton.layer.masksToBounds = true

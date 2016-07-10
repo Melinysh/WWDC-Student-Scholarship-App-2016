@@ -128,12 +128,12 @@ class CardData: NSObject {
 			events.append(CardInfo(img: images[i], detail: descriptions[i], name: eventNames[i], bcC: backgroundColors[i], tC: textColors[i], index: i, storyboard: storyboards[i], extraInfoDict: extraStuff[i]))
 			
 		}
-		return Array(events.reverse())
+		return Array(events.reversed())
 	}
 	
 }
 
-func color(r : Int, g : Int, b: Int) -> UIColor {
+func color(_ r : Int, g : Int, b: Int) -> UIColor {
 	return UIColor(red: CGFloat(r)/255.0, green:  CGFloat(g)/255.0, blue: CGFloat(b)/255, alpha: 1.0)
 }
 

@@ -22,12 +22,12 @@ class WelcomeCardViewController: UIViewController, DetailViewControllable  {
         // Dispose of any resources that can be recreated.
     }
 
-	func additionalSetup(info: CardInfo) {
+	func additionalSetup(_ info: CardInfo) {
 		
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
 	}
     

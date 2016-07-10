@@ -17,57 +17,49 @@ class MeshwurkViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var screenshot1: UIImageView!
 	@IBOutlet weak var stackView: UIStackView!
 	@IBOutlet weak var infoField: UITextView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-	@IBAction func seeOnGithub(sender: AnyObject) {
-		let sfVC = SFSafariViewController(URL: NSURL(string: "https://github.com/Melinysh/Meshwork")!)
-		self.presentViewController(sfVC, animated: true, completion: nil)
+	@IBAction func seeOnGithub(_ sender: AnyObject) {
+		let sfVC = SFSafariViewController(url: URL(string: "https://github.com/Melinysh/Meshwork")!)
+		self.present(sfVC, animated: true, completion: nil)
 	}
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	
 	
 	override func canBecomeFirstResponder() -> Bool {
 		return true
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
 
 	}
 	
-	func additionalSetup(info: CardInfo) {
+	func additionalSetup(_ info: CardInfo) {
 		becomeFirstResponder()
-		githubButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		githubButton.setTitleColor(UIColor.white(), for: UIControlState())
 		githubButton.backgroundColor = self.view.tintColor
 		githubButton.layer.cornerRadius = 4.0
 		githubButton.layer.masksToBounds = true
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
 	}
 	
-	func didTap(sender : UIGestureRecognizer) {
-		let pt = sender.locationInView(stackView)
-		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("screenshotDetail") as! DetailScreenshotViewController
+	func didTap(_ sender : UIGestureRecognizer) {
+		let pt = sender.location(in: stackView)
+		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "screenshotDetail") as! DetailScreenshotViewController
 		detailVC.view.backgroundColor = self.view.backgroundColor
-		if CGRectContainsPoint(screenshot1.frame, pt) {
+		if screenshot1.frame.contains(pt) {
 			detailVC.imageView.image = screenshot1.image
 			detailVC.navBar.topItem?.title = "List Of Those Nearby"
-		} else if CGRectContainsPoint(screenshot3.frame, pt) {
+		} else if screenshot3.frame.contains(pt) {
 			detailVC.imageView.image = screenshot3.image
 			detailVC.navBar.topItem?.title = "Graph View Of Those Nearby"
-		} else if CGRectContainsPoint(screenshot2.frame, pt) {
+		} else if screenshot2.frame.contains(pt) {
 			detailVC.imageView.image = screenshot2.image
 			detailVC.navBar.topItem?.title = "Detail Contact View"
 		} else {
 			return
 		}
-		self.presentViewController(detailVC, animated: true, completion: nil)
+		self.present(detailVC, animated: true, completion: nil)
 	}
 	
     /*

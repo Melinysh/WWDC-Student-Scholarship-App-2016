@@ -190,11 +190,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Stephen Melinyshyn";
 				TargetAttributes = {
 					DCA336011CC5A5A8003AFF96 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CQC8JX8Q4Q;
+						DevelopmentTeamName = "Stephen Melinyshyn";
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -382,6 +385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stephen Melinyshyn/Stephen Melinyshyn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -395,6 +399,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "StephenMelinyshyn.Stephen-Melinyshyn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stephen Melinyshyn/Stephen Melinyshyn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -18,12 +18,12 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var teamPhoto: UIImageView!
 	@IBOutlet weak var demoButton: UIButton!
 	@IBOutlet weak var githubButton: UIButton!
-	@IBAction func loadGithub(sender: AnyObject) {
-		let sfVC = SFSafariViewController(URL: NSURL(string: "https://github.com/jgalperin/redolent-octo-waffle")!)
-		self.presentViewController(sfVC, animated: true, completion: nil)
+	@IBAction func loadGithub(_ sender: AnyObject) {
+		let sfVC = SFSafariViewController(url: URL(string: "https://github.com/jgalperin/redolent-octo-waffle")!)
+		self.present(sfVC, animated: true, completion: nil)
 	}
 	
-	@IBAction func playDemo(sender: AnyObject) {
+	@IBAction func playDemo(_ sender: AnyObject) {
 		do {
 			try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
 			try AVAudioSession.sharedInstance().setActive(true)
@@ -31,11 +31,11 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 			print("CAUGHT ERROR: \(error)")
 			
 		}
-		let path = NSBundle.mainBundle().pathForResource("marketmesh", ofType:"mov")!
-		let player = AVPlayer(URL: NSURL(fileURLWithPath: path))
+		let path = Bundle.main.pathForResource("marketmesh", ofType:"mov")!
+		let player = AVPlayer(url: URL(fileURLWithPath: path))
 		let playerController = AVPlayerViewController()
 		playerController.player = player
-		self.presentViewController(playerController, animated: true) {
+		self.present(playerController, animated: true) {
 			player.play()
 		}
 	}
@@ -44,15 +44,9 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 		return true
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		self.animateViews()
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -60,14 +54,14 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
-	func additionalSetup(info: CardInfo) {
+	func additionalSetup(_ info: CardInfo) {
 		self.becomeFirstResponder()
-		demoButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		demoButton.setTitleColor(UIColor.white(), for: UIControlState())
 		demoButton.backgroundColor = self.view.tintColor
 		demoButton.layer.cornerRadius = 4.0
 		demoButton.layer.masksToBounds = true
 		
-		githubButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		githubButton.setTitleColor(UIColor.white(), for: UIControlState())
 		githubButton.backgroundColor = self.view.tintColor
 		githubButton.layer.cornerRadius = 4.0
 		githubButton.layer.masksToBounds = true

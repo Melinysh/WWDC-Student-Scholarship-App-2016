@@ -17,35 +17,25 @@ class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var screenshot1: UIImageView!
 	@IBOutlet weak var stackview: UIStackView!
 	@IBOutlet weak var infoField: UITextView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-	@IBAction func seeOnGithub(sender: AnyObject) {
-		let sfVC = SFSafariViewController(URL: NSURL(string: "https://github.com/Melinysh/NearbEYE")!)
-		self.presentViewController(sfVC, animated: true, completion: nil)
+	@IBAction func seeOnGithub(_ sender: AnyObject) {
+		let sfVC = SFSafariViewController(url: URL(string: "https://github.com/Melinysh/NearbEYE")!)
+		self.present(sfVC, animated: true, completion: nil)
 	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-	
-	
 	override func canBecomeFirstResponder() -> Bool {
 		return true
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
 
 	}
 	
-	func additionalSetup(info: CardInfo) {
+	func additionalSetup(_ info: CardInfo) {
 		self.becomeFirstResponder()
-		githubButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		githubButton.setTitleColor(UIColor.white(), for: UIControlState())
 		githubButton.backgroundColor = self.view.tintColor
 		githubButton.layer.cornerRadius = 4.0
 		githubButton.layer.masksToBounds = true
@@ -53,33 +43,22 @@ class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
 	}
 	
-	func didTap(sender : UIGestureRecognizer) {
-		let pt = sender.locationInView(stackview)
-		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("screenshotDetail") as! DetailScreenshotViewController
+	func didTap(_ sender : UIGestureRecognizer) {
+		let pt = sender.location(in: stackview)
+		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "screenshotDetail") as! DetailScreenshotViewController
 		detailVC.view.backgroundColor = self.view.backgroundColor
-		if CGRectContainsPoint(screenshot1.frame, pt) {
+		if screenshot1.frame.contains(pt) {
 			detailVC.imageView.image = screenshot1.image
 			detailVC.navBar.topItem?.title = "Main Camera View"
-		} else if CGRectContainsPoint(screenshot2.frame, pt) {
+		} else if screenshot2.frame.contains(pt) {
 			detailVC.imageView.image = screenshot2.image
 			detailVC.navBar.topItem?.title = "Detail View With Map Highlight"
-		} else if CGRectContainsPoint(screenshot3.frame, pt) {
+		} else if screenshot3.frame.contains(pt) {
 			detailVC.imageView.image = screenshot3.image
 			detailVC.navBar.topItem?.title = "Another Camera View"
 		} else {
 			return
 		}
-		self.presentViewController(detailVC, animated: true, completion: nil)
+		self.present(detailVC, animated: true, completion: nil)
 	}
-	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

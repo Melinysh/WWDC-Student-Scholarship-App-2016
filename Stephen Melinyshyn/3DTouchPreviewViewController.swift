@@ -12,8 +12,7 @@ class PreviewViewController: UIViewController {
 
 	@IBOutlet weak var textField: UITextView!
 	
-	
-	override func viewDidAppear(animated: Bool) {
-		self.textField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.textField.setContentOffset(CGPoint.zero, animated: false)
 	}
 }

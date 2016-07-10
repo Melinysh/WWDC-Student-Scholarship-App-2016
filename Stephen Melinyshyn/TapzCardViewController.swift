@@ -15,8 +15,6 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var infoField: UITextView!
 	@IBOutlet weak var playButton: UIButton!
 
-
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -28,21 +26,21 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
         // Dispose of any resources that can be recreated.
     }
 	
-	func additionalSetup(info: CardInfo) {
-		playButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+	func additionalSetup(_ info: CardInfo) {
+		playButton.setTitleColor(UIColor.white(), for: UIControlState())
 		playButton.backgroundColor = self.view.tintColor
 		playButton.layer.cornerRadius = 4.0
 		playButton.layer.masksToBounds = true
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
 
 	}
 
 	
-	override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		ball.removeFromSuperview()
 		ball2.removeFromSuperview()
 		self.view.addSubview(ball)
@@ -55,44 +53,44 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 		ball.layer.removeAllAnimations()
 		ball2.layer.removeAllAnimations()
 		
-		let position = self.view.frame.width < self.view.frame.height || UIDevice.currentDevice().userInterfaceIdiom == .Pad ? "position.x" : "position.y"
+		let position = self.view.frame.width < self.view.frame.height || UIDevice.current().userInterfaceIdiom == .pad ? "position.x" : "position.y"
 		
 		let animation = CAKeyframeAnimation(keyPath: position)
 		animation.duration = 3.0
 		animation.beginTime = CACurrentMediaTime()
 		animation.repeatCount = HUGE
-		let startPT = NSNumber(double: Double(self.ball.center.x))
-		let endPT = position == "position.x" ? NSNumber(double: Double(self.view.frame.width - self.ball.frame.width)) : NSNumber(double: Double(self.view.frame.height - self.ball.frame.width))
+		let startPT = NSNumber(value: Double(self.ball.center.x))
+		let endPT = position == "position.x" ? NSNumber(value: Double(self.view.frame.width - self.ball.frame.width)) : NSNumber(value: Double(self.view.frame.height - self.ball.frame.width))
 		animation.values = [startPT, endPT, startPT]
-		animation.removedOnCompletion = false
+		animation.isRemovedOnCompletion = false
 		animation.autoreverses = true
 		animation.rotationMode = kCAAnimationLinear
 		let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
 		rotation.duration = 1.0
 		rotation.repeatCount = HUGE
 		rotation.fillMode = kCAFillModeForwards
-		rotation.removedOnCompletion = false
-		rotation.cumulative = true
-		rotation.delegate = self
+		rotation.isRemovedOnCompletion = false
+		rotation.isCumulative = true
+		//rotation.delegate = self
 		let currentAngle =  Float(0.0)
 		let a1 = currentAngle + (0.5 * Float(M_PI))
 		let a2 = currentAngle + Float(M_PI)
 		let angles : [NSNumber] = [
-			NSNumber(float: currentAngle),
-			NSNumber(float: a1),
-			NSNumber(float: a2)
+			NSNumber(value: currentAngle),
+			NSNumber(value: a1),
+			NSNumber(value: a2)
 		]
 		rotation.values = angles
 		
-		self.ball.layer.addAnimation(rotation, forKey: "show")
-		self.ball.layer.addAnimation(animation, forKey: "pos")
+		self.ball.layer.add(rotation, forKey: "show")
+		self.ball.layer.add(animation, forKey: "pos")
 		
 		let animation2 = CAKeyframeAnimation(keyPath: position)
 		animation2.duration = 3.0
 		animation2.beginTime = CACurrentMediaTime() + 0.5
 		animation2.repeatCount = HUGE
 		animation2.values = [startPT, endPT, startPT]
-		animation2.removedOnCompletion = false
+		animation2.isRemovedOnCompletion = false
 		animation2.autoreverses = true
 		animation2.rotationMode = kCAAnimationLinear
 		let rotation2 = CAKeyframeAnimation(keyPath: "transform.rotation")
@@ -100,12 +98,12 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 		rotation2.beginTime = CACurrentMediaTime() + 0.5
 		rotation2.repeatCount = HUGE
 		rotation2.fillMode = kCAFillModeForwards
-		rotation2.removedOnCompletion = false
-		rotation2.cumulative = true
-		rotation2.delegate = self
+		rotation2.isRemovedOnCompletion = false
+		rotation2.isCumulative = true
+		//∫	rotation2.delegate = self
 		rotation2.values = angles
-		self.ball2.layer.addAnimation(rotation2, forKey: "show")
-		self.ball2.layer.addAnimation(animation2, forKey: "pos")
+		self.ball2.layer.add(rotation2, forKey: "show")
+		self.ball2.layer.add(animation2, forKey: "pos")
 	}
     /*
     // MARK: - Navigation

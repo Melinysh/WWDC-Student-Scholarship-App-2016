@@ -17,67 +17,42 @@ class WattpadCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var image2: UIImageView!
 	@IBOutlet weak var stackView: UIStackView!
 	
-	@IBAction func goToWattpad(sender: AnyObject) {
-		let sfVC = SFSafariViewController(URL: NSURL(string: "https://wattpad.com")!)
-		self.presentViewController(sfVC, animated: true, completion: nil)
+	@IBAction func goToWattpad(_ sender: AnyObject) {
+		let sfVC = SFSafariViewController(url: URL(string: "https://wattpad.com")!)
+		self.present(sfVC, animated: true, completion: nil)
 	}
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 	
 	override func canBecomeFirstResponder() -> Bool {
 		return true
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		self.infoField.setContentOffset(CGPointZero, animated: false)
+	override func viewDidAppear(_ animated: Bool) {
+		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
-
 	}
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 	
-	func additionalSetup(info: CardInfo) {
+	func additionalSetup(_ info: CardInfo) {
 		self.becomeFirstResponder()
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
-		wattpadButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+		wattpadButton.setTitleColor(UIColor.white(), for: UIControlState())
 		wattpadButton.backgroundColor = self.view.tintColor
 		wattpadButton.layer.cornerRadius = 4.0
 		wattpadButton.layer.masksToBounds = true
 	}
 	
-	func didTap(sender : UIGestureRecognizer) {
-		let pt = sender.locationInView(stackView)
-		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("screenshotDetail") as! DetailScreenshotViewController
+	func didTap(_ sender : UIGestureRecognizer) {
+		let pt = sender.location(in: stackView)
+		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "screenshotDetail") as! DetailScreenshotViewController
 		detailVC.view.backgroundColor = self.view.backgroundColor
-		if CGRectContainsPoint(image1.frame, pt) {
+		if image1.frame.contains(pt) {
 			detailVC.imageView.image = image1.image
 			detailVC.navBar.topItem?.title = "Wattpad CEO Allen Lau"
-		} else if CGRectContainsPoint(image2.frame, pt) {
+		} else if image2.frame.contains(pt) {
 			detailVC.imageView.image = image2.image
 			detailVC.navBar.topItem?.title = "Wattpad Games Room"
 		} else {
 			return
 		}
-		self.presentViewController(detailVC, animated: true, completion: nil)
+		self.present(detailVC, animated: true, completion: nil)
 	}
-	
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
