@@ -17,7 +17,7 @@ class RezCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var screenshot2: UIImageView!
 	@IBOutlet weak var stackView: UIStackView!
 	
-	override func canBecomeFirstResponder() -> Bool {
+	override var canBecomeFirstResponder: Bool {
 		return true
 	}
 

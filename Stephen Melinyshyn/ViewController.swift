@@ -78,25 +78,27 @@ class ViewController: UIViewController {
 			if let b = attachmentBehavior {
 				animator.removeBehavior(b)
 			}
+			
 			let centerOffset = UIOffsetMake(boxLocation.x - card.bounds.midX, boxLocation.y - card.bounds.midY)
 			attachmentBehavior = UIAttachmentBehavior(item: card, offsetFromCenter: centerOffset, attachedToAnchor: location)
 			animator.addBehavior(attachmentBehavior!)
 		} else if sender.state == UIGestureRecognizerState.changed {
 			attachmentBehavior!.anchorPoint = location
 		} else if sender.state == UIGestureRecognizerState.ended {
-			animator.removeBehavior(attachmentBehavior!)
-			snapBehavior = UISnapBehavior(item: card, snapTo: view.center)
-			animator.addBehavior(snapBehavior)
+			//animator.removeBehavior(attachmentBehavior!)
+			//snapBehavior = UISnapBehavior(item: card, snapTo: view.center)
 			
 			let translation = sender.translation(in: view)
 			if abs(translation.y) > 100 || abs(translation.x) > 100 {
-				animator.removeAllBehaviors()
-				let gravity = UIGravityBehavior(items: [card])
-				gravity.gravityDirection = CGVector(dx: translation.x/15, dy: translation.y/15) //pulled in the direction of the swipe
-				animator.addBehavior(gravity)
+				//animator.removeBehavior(attachmentBehavior!)
+				attachmentBehavior?.anchorPoint = location
+//				let push = UIPushBehavior(items: [card], mode: .instantaneous)
+//				push.pushDirection = CGVector(dx: translation.x/15, dy: translation.y/15) //pushed in the direction of the swipe
+//				animator.addBehavior(push)
 				weak var weakSelf = self
-				UIView.animateKeyframes(withDuration: 0.1, delay: 0.3, options: UIViewKeyframeAnimationOptions(), animations: { () -> Void in
+				UIView.animateKeyframes(withDuration: 0.4, delay: 0.0, options: UIViewKeyframeAnimationOptions(), animations: { () -> Void in
 					card.alpha = 0
+					card.isUserInteractionEnabled = false
 					}, completion: { (fin) -> Void in
 						guard let actualSelf = weakSelf else { return }
 						
@@ -120,7 +122,7 @@ class ViewController: UIViewController {
 							actualSelf.snapBehavior = UISnapBehavior(item: newTopCard, snapTo: actualSelf.view.center)
 							actualSelf.animator.addBehavior(actualSelf.snapBehavior)
 							actualSelf.view.backgroundColor = newTopCard.backgroundColor
-							UIApplication.shared().keyWindow?.backgroundColor = newTopCard.backgroundColor
+							UIApplication.shared.keyWindow?.backgroundColor = newTopCard.backgroundColor
 							actualSelf.progressIndicator.tintColor = newTopCard.backgroundColor
 						} else {
 							let alert = UIAlertController(title: "You're all done!", message: "Go back to the start?", preferredStyle: UIAlertControllerStyle.alert)
@@ -137,6 +139,8 @@ class ViewController: UIViewController {
 							actualSelf.previewingContext = actualSelf.registerForPreviewing(with: actualSelf, sourceView: actualSelf.view)
 						}
 				})
+			} else {
+				//animator.addBehavior(snapBehavior)
 			}
 		}
 	}
@@ -206,7 +210,7 @@ class ViewController: UIViewController {
 			if i == cardNumber - 1 {
 				self.viewsAndRotations[card] = CGFloat(0)
 				self.view.backgroundColor = card.backgroundColor
-				UIApplication.shared().keyWindow?.backgroundColor = card.backgroundColor
+				UIApplication.shared.keyWindow?.backgroundColor = card.backgroundColor
 			}
 			
 			// prepare to animate
@@ -218,7 +222,7 @@ class ViewController: UIViewController {
 			UIView.animate(withDuration: 0.30, delay: 0.3 * Double(i), usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
 				card.alpha = 1
 				card.layer.shadowOpacity = 0.8
-				card.transform = CGAffineTransform(rotationAngle: self.viewsAndRotations[card]!).concat(CGAffineTransform(scaleX: 1, y: 1))
+				card.transform = CGAffineTransform(rotationAngle: self.viewsAndRotations[card]!).concatenating((CGAffineTransform(scaleX: 1, y: 1)))
 				}, completion: nil)
 		}
 			UIView.animate(withDuration: 0.40, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
@@ -248,7 +252,7 @@ class ViewController: UIViewController {
 			if i == cardViews.count - 1 {
 				self.viewsAndRotations[card] = CGFloat(0)
 				self.view.backgroundColor = card.backgroundColor
-				UIApplication.shared().keyWindow?.backgroundColor = card.backgroundColor
+				UIApplication.shared.keyWindow?.backgroundColor = card.backgroundColor
 			}
 			
 			// prepare to animate
@@ -263,7 +267,7 @@ class ViewController: UIViewController {
 				}
 				card.alpha = 1
 				card.layer.shadowOpacity = 0.8
-				card.transform = CGAffineTransform(rotationAngle: actualSelf.viewsAndRotations[card]!).concat(CGAffineTransform(scaleX: 1, y: 1))
+				card.transform = CGAffineTransform(rotationAngle: actualSelf.viewsAndRotations[card]!).concatenating(CGAffineTransform(scaleX: 1, y: 1))
 			}, completion: nil)
 		}
 		UIView.animate(withDuration: 0.40, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
@@ -288,7 +292,7 @@ class ViewController: UIViewController {
 			card.alpha = 1
 			card.subviews.forEach { $0.alpha = 1 }
 			card.layer.shadowOpacity = 0.8
-			card.transform = CGAffineTransform(rotationAngle: actualSelf.viewsAndRotations[card]!).concat(CGAffineTransform(scaleX: 1, y: 1))
+			card.transform = CGAffineTransform(rotationAngle: actualSelf.viewsAndRotations[card]!).concatenating(CGAffineTransform(scaleX: 1, y: 1))
 			}, completion: nil)
 	}
 	
@@ -310,28 +314,21 @@ class ViewController: UIViewController {
 				guard let actualSelf = weakSelf else { return }
 				let firstCardConstraints = actualSelf.view.constraints.filter {$0.firstItem is CardView}.filter{$0.firstItem as! CardView == card}
 				let secondCardConstraints = actualSelf.view.constraints.filter {$0.secondItem is CardView}.filter{$0.secondItem as! CardView == card}
-				print("First constaints are :", firstCardConstraints, "\n\n and second constraints are:", secondCardConstraints)
 				UIView.animate(withDuration: 0.3, animations: {
 					firstCardConstraints.forEach { $0.constant = 0 }
 					secondCardConstraints.forEach { $0.constant = 0 }
 					card.layoutIfNeeded()
 					actualSelf.view.layoutIfNeeded()
 					card.layer.cornerRadius = 0
+					card.frame = self.view.frame
 				}) { (fin) in
-					print(" _+_ AFTER _+_+ \nFirst constaints are :", firstCardConstraints, "\n\n and second constraints are:", secondCardConstraints)
 					let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: card.info.storyboard) as! DetailViewControllable
 					detailVC.view.frame = actualSelf.view.frame
 					card.addSubview(detailVC.view)
 					detailVC.initViews(card.info)
 					card.removeGestureRecognizer(card.gestureRecognizers!.last!)
-					//	card.removeConstraints(card.constraints)
-
-//					let verticle = NSLayoutConstraint.constraints(withVisualFormat: "V:|[detV]|", options: NSLayoutFormatOptions.alignAllCenterX, metrics: nil, views: ["detV" : detailVC.view])
-//					let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[detV]|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: ["detV" : detailVC.view])
-//					card.addConstraints(verticle + horizontal)
+					card.layoutIfNeeded()
 					detailVC.view.setNeedsUpdateConstraints()
-					//detailVC.animateViews()
-					
 					if actualSelf.traitCollection.forceTouchCapability == .available {
 						actualSelf.unregisterForPreviewing(withContext: (actualSelf.previewingContext)!)
 					}

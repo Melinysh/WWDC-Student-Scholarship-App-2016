@@ -23,7 +23,7 @@ class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 		self.present(sfVC, animated: true, completion: nil)
 	}
 
-	override func canBecomeFirstResponder() -> Bool {
+	override var canBecomeFirstResponder: Bool {
 		return true
 	}
 	
@@ -35,7 +35,7 @@ class NearbeyeCardViewController: UIViewController, DetailViewControllable {
 	
 	func additionalSetup(_ info: CardInfo) {
 		self.becomeFirstResponder()
-		githubButton.setTitleColor(UIColor.white(), for: UIControlState())
+		githubButton.setTitleColor(UIColor.white, for: UIControlState())
 		githubButton.backgroundColor = self.view.tintColor
 		githubButton.layer.cornerRadius = 4.0
 		githubButton.layer.masksToBounds = true

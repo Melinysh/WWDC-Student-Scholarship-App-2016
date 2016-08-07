@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
-		UIApplication.shared().isStatusBarHidden = true
+		UIApplication.shared.isStatusBarHidden = true
 		self.window?.isOpaque = false
 		return true
 	}

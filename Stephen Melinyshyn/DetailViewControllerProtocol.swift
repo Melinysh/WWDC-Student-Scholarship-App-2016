@@ -17,12 +17,13 @@ protocol DetailViewControllable : class {
 extension DetailViewControllable {
 	func initViews(_ info : CardInfo) {
 		view.backgroundColor = info.backgroundColor
-		//print(view.frame)
-		let bgC = info.backgroundColor.cgColor.components
-		infoField.backgroundColor = UIColor(red: (bgC?[0])! * 0.8,
-										  green: (bgC?[1])! * 0.8,
-										   blue: (bgC?[2])! * 0.8,
-										  alpha: 1)
+		var r : CGFloat = 0
+		var g : CGFloat = 0
+		var b : CGFloat = 0
+		var a : CGFloat = 0
+		info.backgroundColor.getRed(&r, green: &g, blue: &b, alpha: &a)
+		
+		infoField.backgroundColor = UIColor(red: r * 0.8, green: g * 0.8, blue: b * 0.8, alpha: 1.0)
 		infoField.text = info.info
 		infoField.textColor = info.textColor
 		infoField.layer.cornerRadius = 5

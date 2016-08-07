@@ -31,7 +31,7 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 			print("CAUGHT ERROR: \(error)")
 			
 		}
-		let path = Bundle.main.pathForResource("marketmesh", ofType:"mov")!
+		let path = Bundle.main.path(forResource: "marketmesh", ofType:"mov")!
 		let player = AVPlayer(url: URL(fileURLWithPath: path))
 		let playerController = AVPlayerViewController()
 		playerController.player = player
@@ -40,7 +40,7 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 		}
 	}
 	
-	override func canBecomeFirstResponder() -> Bool {
+	override var canBecomeFirstResponder: Bool {
 		return true
 	}
 	
@@ -56,12 +56,12 @@ class MarketMeshCardViewController: UIViewController, DetailViewControllable {
 	
 	func additionalSetup(_ info: CardInfo) {
 		self.becomeFirstResponder()
-		demoButton.setTitleColor(UIColor.white(), for: UIControlState())
+		demoButton.setTitleColor(UIColor.white, for: UIControlState())
 		demoButton.backgroundColor = self.view.tintColor
 		demoButton.layer.cornerRadius = 4.0
 		demoButton.layer.masksToBounds = true
 		
-		githubButton.setTitleColor(UIColor.white(), for: UIControlState())
+		githubButton.setTitleColor(UIColor.white, for: UIControlState())
 		githubButton.backgroundColor = self.view.tintColor
 		githubButton.layer.cornerRadius = 4.0
 		githubButton.layer.masksToBounds = true

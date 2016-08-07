@@ -24,7 +24,7 @@ class MeshwurkViewController: UIViewController, DetailViewControllable {
 	}
 	
 	
-	override func canBecomeFirstResponder() -> Bool {
+	override var canBecomeFirstResponder: Bool {
 		return true
 	}
 	
@@ -36,7 +36,7 @@ class MeshwurkViewController: UIViewController, DetailViewControllable {
 	
 	func additionalSetup(_ info: CardInfo) {
 		becomeFirstResponder()
-		githubButton.setTitleColor(UIColor.white(), for: UIControlState())
+		githubButton.setTitleColor(UIColor.white, for: UIControlState())
 		githubButton.backgroundColor = self.view.tintColor
 		githubButton.layer.cornerRadius = 4.0
 		githubButton.layer.masksToBounds = true

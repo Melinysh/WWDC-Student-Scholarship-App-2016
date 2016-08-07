@@ -22,7 +22,8 @@ class WattpadCardViewController: UIViewController, DetailViewControllable {
 		self.present(sfVC, animated: true, completion: nil)
 	}
 	
-	override func canBecomeFirstResponder() -> Bool {
+	
+	override var canBecomeFirstResponder: Bool {
 		return true
 	}
 	
@@ -34,7 +35,7 @@ class WattpadCardViewController: UIViewController, DetailViewControllable {
 	func additionalSetup(_ info: CardInfo) {
 		self.becomeFirstResponder()
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
-		wattpadButton.setTitleColor(UIColor.white(), for: UIControlState())
+		wattpadButton.setTitleColor(UIColor.white, for: UIControlState())
 		wattpadButton.backgroundColor = self.view.tintColor
 		wattpadButton.layer.cornerRadius = 4.0
 		wattpadButton.layer.masksToBounds = true

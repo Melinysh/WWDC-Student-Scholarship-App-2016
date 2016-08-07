@@ -14,20 +14,9 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 	@IBOutlet weak var ball2: UIImageView!
 	@IBOutlet weak var infoField: UITextView!
 	@IBOutlet weak var playButton: UIButton!
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view.
-	}
-	
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 	
 	func additionalSetup(_ info: CardInfo) {
-		playButton.setTitleColor(UIColor.white(), for: UIControlState())
+		playButton.setTitleColor(UIColor.white, for: UIControlState())
 		playButton.backgroundColor = self.view.tintColor
 		playButton.layer.cornerRadius = 4.0
 		playButton.layer.masksToBounds = true
@@ -36,16 +25,9 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 	override func viewDidAppear(_ animated: Bool) {
 		self.infoField.setContentOffset(CGPoint.zero, animated: false)
 		self.animateViews()
-
 	}
 
-	
-	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-		ball.removeFromSuperview()
-		ball2.removeFromSuperview()
-		self.view.addSubview(ball)
-		self.view.addSubview(ball2)
-		
+	override func viewWillAppear(_ animated: Bool) {
 		applyBallAnimations()
 	}
 	
@@ -53,7 +35,7 @@ class TapzCardViewController: UIViewController, DetailViewControllable {
 		ball.layer.removeAllAnimations()
 		ball2.layer.removeAllAnimations()
 		
-		let position = self.view.frame.width < self.view.frame.height || UIDevice.current().userInterfaceIdiom == .pad ? "position.x" : "position.y"
+		let position = self.view.frame.width < self.view.frame.height || UIDevice.current.userInterfaceIdiom == .pad ? "position.x" : "position.y"
 		
 		let animation = CAKeyframeAnimation(keyPath: position)
 		animation.duration = 3.0

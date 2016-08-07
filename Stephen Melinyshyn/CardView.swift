@@ -32,7 +32,7 @@ class CardView: UIView {
 		thumbnail.clipsToBounds = true
 		self.translatesAutoresizingMaskIntoConstraints = false
 
-		self.layer.shadowColor = UIColor.black().cgColor
+		self.layer.shadowColor = UIColor.black.cgColor
 		self.layer.shadowOpacity = 0.1
 		self.layer.shadowRadius = 4
 		self.layer.shadowOffset = CGSize(width: 3.0, height: 4.0)

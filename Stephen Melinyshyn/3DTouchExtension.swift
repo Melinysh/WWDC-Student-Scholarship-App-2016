@@ -14,8 +14,13 @@ extension ViewController : UIViewControllerPreviewingDelegate {
 		guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "peekPreview") as? PreviewViewController else { return nil }
 		
 		viewController.view.backgroundColor = topCard.backgroundColor
-		let bgC = topCard.backgroundColor!.cgColor.components
-		viewController.textField.backgroundColor = UIColor(red: (bgC?[0])! * 0.8, green: (bgC?[1])! * 0.8, blue: (bgC?[2])! * 0.8, alpha: 1)
+		var r : CGFloat = 0
+		var g : CGFloat = 0
+		var b : CGFloat = 0
+		var a : CGFloat = 0
+		topCard.backgroundColor!.getRed(&r, green: &g, blue: &b, alpha: &a)
+
+		viewController.textField.backgroundColor = UIColor(red: r * 0.8, green: g * 0.8, blue: b * 0.8, alpha: 1.0)
 		viewController.textField.text = topCard.info.info
 		viewController.textField.textColor = topCard.info.textColor
 		viewController.textField.layer.cornerRadius = 5
