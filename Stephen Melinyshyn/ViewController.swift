@@ -85,16 +85,10 @@ class ViewController: UIViewController {
 		} else if sender.state == UIGestureRecognizerState.changed {
 			attachmentBehavior!.anchorPoint = location
 		} else if sender.state == UIGestureRecognizerState.ended {
-			//animator.removeBehavior(attachmentBehavior!)
-			//snapBehavior = UISnapBehavior(item: card, snapTo: view.center)
-			
 			let translation = sender.translation(in: view)
 			if abs(translation.y) > 100 || abs(translation.x) > 100 {
-				//animator.removeBehavior(attachmentBehavior!)
 				attachmentBehavior?.anchorPoint = location
-//				let push = UIPushBehavior(items: [card], mode: .instantaneous)
-//				push.pushDirection = CGVector(dx: translation.x/15, dy: translation.y/15) //pushed in the direction of the swipe
-//				animator.addBehavior(push)
+
 				weak var weakSelf = self
 				UIView.animateKeyframes(withDuration: 0.4, delay: 0.0, options: UIViewKeyframeAnimationOptions(), animations: { () -> Void in
 					card.alpha = 0
@@ -139,8 +133,6 @@ class ViewController: UIViewController {
 							actualSelf.previewingContext = actualSelf.registerForPreviewing(with: actualSelf, sourceView: actualSelf.view)
 						}
 				})
-			} else {
-				//animator.addBehavior(snapBehavior)
 			}
 		}
 	}
